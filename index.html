@@ -14,16 +14,17 @@
         h1 { font-size: 26px; color: #2c3e50; margin-bottom: 10px; }
         h2 { font-size: 18px; color: #546e7a; margin-top: 20px; margin-bottom: 10px; }
 
-        /* 문제 상자 및 족보 뱃지 */
         #questionBox { background-color: #e3f2fd; border-left: 6px solid #2196F3; padding: 20px; border-radius: 12px; margin: 20px 0; font-size: 19px; font-weight: bold; line-height: 1.6; color: #1565c0; text-align: left; word-break: keep-all; position: relative; }
         .jokbo-badge { display: inline-block; background-color: #FF5252; color: white; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 20px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(255, 82, 82, 0.3); animation: pulse 1.5s infinite; }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
 
-        /* 해설 상자 */
-        #explanationBox { display: none; background-color: #fff3e0; border: 2px dashed #ffb74d; padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 15px; color: #e65100; text-align: left; line-height: 1.5; font-weight: bold; animation: fadeIn 0.4s ease; }
+        /* 💡 해설(예시 및 의미) 상자 디자인 강화 */
+        #explanationBox { display: none; background-color: #fff3e0; border: 2px dashed #ffb74d; padding: 15px; border-radius: 10px; margin-top: 15px; text-align: left; line-height: 1.6; animation: fadeIn 0.4s ease; }
+        .exp-title { font-size: 14px; font-weight: bold; color: #e65100; margin-bottom: 5px; display: block; }
+        .exp-word { font-size: 17px; font-weight: bold; color: #d84315; }
+        .exp-meaning { font-size: 16px; color: #455a64; margin-left: 5px; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* 4지선다 버튼 */
         .options-group { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
         .option-btn { background-color: #fff; border: 2px solid #cfd8dc; border-radius: 12px; padding: 16px; font-size: 18px; font-weight: bold; color: #455a64; cursor: pointer; transition: 0.2s; text-align: center; }
         .option-btn:active { transform: scale(0.98); }
@@ -31,11 +32,9 @@
         .option-btn.wrong { background-color: #ffebee !important; border-color: #f44336 !important; color: #c62828 !important; text-decoration: line-through; }
         .option-btn:disabled { cursor: default; opacity: 0.9; }
 
-        /* 일반 버튼 */
         .btn-start { background-color: #2196F3; color: white; font-size: 18px; width: 100%; max-width: 300px; padding: 16px; margin-top: 30px; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; }
         .btn-next { background-color: #37474f; color: white; padding: 15px; border-radius: 10px; width: 100%; margin-top: 20px; font-weight: bold; display: none; border: none; font-size: 16px; cursor: pointer; }
         
-        /* 오답노트 전용 내비게이션 버튼 */
         .nav-group { display: none; width: 100%; gap: 10px; margin-top: 20px; }
         .btn-nav { background-color: #607d8b; color: white; flex: 1; border: none; border-radius: 10px; padding: 14px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.2s; }
         .btn-nav:hover:not(:disabled) { background-color: #455a64; }
@@ -44,14 +43,11 @@
         #resultMsg { font-size: 20px; font-weight: bold; margin-top: 15px; min-height: 24px; }
         #scoreLabel { font-size: 14px; font-weight: bold; color: #90a4ae; text-align: right; }
 
-        /* 옵션 그룹 (체크박스, 라디오) */
         .radio-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 15px 0; }
         .radio-group label { background-color: #f5f5f5; padding: 10px 14px; border-radius: 8px; border: 2px solid #e0e0e0; cursor: pointer; font-size: 14px; font-weight: bold; box-sizing: border-box; transition: 0.2s; }
         .radio-group input { display: none; } 
         
         .radio-group label:has(input[type="radio"]:checked) { border-color: #2196F3; background-color: #e3f2fd; color: #1976D2; }
-        
-        /* 족보 및 파트 체크박스 전용 디자인 */
         .radio-group label:has(input[type="checkbox"]:checked) { border-color: #FF9800; background-color: #fff3e0; color: #ef6c00; }
         .radio-group label:has(input#jokboOnly:checked) { border-color: #FF5252; background-color: #ffebee; color: #d32f2f; }
 
@@ -101,7 +97,7 @@
         
         <div id="resultMsg"></div>
 
-        <div id="explanationBox">💡 해설이 여기에 표시됩니다.</div>
+        <div id="explanationBox"></div>
 
         <div id="optionsContainer" class="options-group"></div>
 
@@ -125,6 +121,7 @@
     <details class="update-log">
         <summary>📢 업데이트 내역</summary>
         <ul>
+            <li><b>v1.2</b> - 💡 해설란에 '예시 단어'와 '예시의 의미' 동시 표기 기능 추가</li>
             <li><b>v1.1</b> - 🔥 족보 문제 강조 및 족보 모아풀기 기능 추가</li>
             <li><b>v1.0</b> - 🔤 파트별 선택 및 해설 기능이 탑재된 의학용어 퀴즈 배포</li>
         </ul>
@@ -142,7 +139,7 @@
     let reviewScore = 0; 
     let isReviewMode = false;
 
-    // 💡 5개의 열(분류, 문제, 정답, 해설, 족보여부) 파싱
+    // 💡 6개의 열(분류, 문제, 정답, 예시단어, 예시의미, 족보여부) 파싱
     Papa.parse("data.csv", {
         download: true, header: false, skipEmptyLines: true,
         complete: function(results) {
@@ -151,14 +148,15 @@
                 const row = rows[i];
                 if (row.length < 3 || !row[0].trim()) continue;
                 
-                // E열(인덱스 4)에 'O'가 있으면 족보로 인식
-                const isJokbo = row.length >= 5 && row[4] && row[4].trim().toUpperCase() === 'O';
+                // F열(인덱스 5)에 'O'가 있으면 족보로 인식
+                const isJokbo = row.length >= 6 && row[5] && row[5].trim().toUpperCase() === 'O';
 
                 allData.push({ 
                     cat: row[0].trim(),         
                     question: row[1].trim(),    
                     answer: row[2].trim(),      
-                    exp: row[3] ? row[3].trim() : "",
+                    exampleWord: row[3] ? row[3].trim() : "",    // D열: 예시 단어
+                    exampleMeaning: row[4] ? row[4].trim() : "", // E열: 예시 의미
                     isJokbo: isJokbo
                 });
             }
@@ -180,7 +178,6 @@
 
         let filtered = allData.filter(item => selectedCats.includes(item.cat));
 
-        // 💡 족보 필터링 적용
         const isJokboOnly = document.getElementById('jokboOnly').checked;
         if (isJokboOnly) {
             filtered = filtered.filter(item => item.isJokbo);
@@ -237,14 +234,13 @@
 
         const currentQ = quizSet[currentIdx];
         
-        // 💡 족보 뱃지와 카테고리 표시 결합
         const badgeHtml = currentQ.isJokbo ? `<div class="jokbo-badge">🔥 족보 빈출 용어</div><br>` : '';
         document.getElementById('questionBox').innerHTML = `<span style="font-size:14px; color:#78909c; display:block; margin-bottom:5px;">[${currentQ.cat}]</span>${badgeHtml}${currentQ.question}`;
         
         document.getElementById('resultMsg').innerText = "";
         
         document.getElementById('explanationBox').style.display = "none";
-        document.getElementById('explanationBox').innerText = "";
+        document.getElementById('explanationBox').innerHTML = "";
         
         document.getElementById('nextBtnNormal').style.display = "none";
         
@@ -284,12 +280,13 @@
             const btn = document.createElement('button');
             btn.className = "option-btn";
             btn.innerText = choice;
-            btn.onclick = () => checkAnswer(btn, choice, currentQ.answer, currentQ.exp);
+            // 💡 함수 호출 시 예시 단어와 의미를 각각 넘겨줌
+            btn.onclick = () => checkAnswer(btn, choice, currentQ.answer, currentQ.exampleWord, currentQ.exampleMeaning);
             container.appendChild(btn);
         });
     }
 
-    function checkAnswer(btn, selected, correct, expText) {
+    function checkAnswer(btn, selected, correct, exWord, exMeaning) {
         const btns = document.querySelectorAll('.option-btn');
         btns.forEach(b => b.disabled = true); 
 
@@ -306,9 +303,14 @@
             document.getElementById('resultMsg').style.color = "#f44336";
         }
         
-        if (expText && expText.trim() !== "") {
+        // 💡 엑셀에 적어둔 예시 단어와 뜻 조합해서 출력
+        if ((exWord && exWord.trim() !== "") || (exMeaning && exMeaning.trim() !== "")) {
             const expBox = document.getElementById('explanationBox');
-            expBox.innerHTML = `💡 <b>관련 예시/해설</b><br>${expText}`;
+            let expHtml = `<span class="exp-title">💡 대표 예시</span>`;
+            if (exWord) expHtml += `<span class="exp-word">${exWord}</span>`;
+            if (exMeaning) expHtml += `<span class="exp-meaning"> : ${exMeaning}</span>`;
+            
+            expBox.innerHTML = expHtml;
             expBox.style.display = "block";
         }
         
