@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🔤 의학용어 마스터 퀴즈</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <style>
+        body { font-family: 'Helvetica', 'Arial', sans-serif; background-color: #f4f7f9; margin: 0; display: flex; justify-content: center; padding: 10px; box-sizing: border-box; min-height: 100vh; }
+        .container { background-color: white; width: 100%; max-width: 600px; padding: 25px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center; display: flex; flex-direction: column; justify-content: center; position: relative; }
+        .screen { display: none; } 
+        .active { display: block; } 
+        
+        h1 { font-size: 26px; color: #2c3e50; margin-bottom: 10px; }
+        h2 { font-size: 18px; color: #546e7a; margin-top: 20px; margin-bottom: 10px; }
+
+        /* 문제 상자 및 족보 뱃지 */
+        #questionBox { background-color: #e3f2fd; border-left: 6px solid #2196F3; padding: 20px; border-radius: 12px; margin: 20px 0; font-size: 19px; font-weight: bold; line-height: 1.6; color: #1565c0; text-align: left; word-break: keep-all; position: relative; }
+        .jokbo-badge { display: inline-block; background-color: #FF5252; color: white; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 20px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(255, 82, 82, 0.3); animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+        /* 해설 상자 */
+        #explanationBox { display: none; background-color: #fff3e0; border: 2px dashed #ffb74d; padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 15px; color: #e65100; text-align: left; line-height: 1.5; font-weight: bold; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* 4지선다 버튼 */
+        .options-group { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
+        .option-btn { background-color: #fff; border: 2px solid #cfd8dc; border-radius: 12px; padding: 16px; font-size: 18px; font-weight: bold; color: #455a64; cursor: pointer; transition: 0.2s; text-align: center; }
+        .option-btn:active { transform: scale(0.98); }
+        .option-btn.correct { background-color: #e8f5e9 !important; border-color: #4CAF50 !important; color: #2e7d32 !important; }
+        .option-btn.wrong { background-color: #ffebee !important; border-color: #f44336 !important; color: #c62828 !important; text-decoration: line-through; }
+        .option-btn:disabled { cursor: default; opacity: 0.9; }
+
+        /* 일반 버튼 */
+        .btn-start { background-color: #2196F3; color: white; font-size: 18px; width: 100%; max-width: 300px; padding: 16px; margin-top: 30px; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; }
+        .btn-next { background-color: #37474f; color: white; padding: 15px; border-radius: 10px; width: 100%; margin-top: 20px; font-weight: bold; display: none; border: none; font-size: 16px; cursor: pointer; }
+        
+        /* 오답노트 전용 내비게이션 버튼 */
+        .nav-group { display: none; width: 100%; gap: 10px; margin-top: 20px; }
+        .btn-nav { background-color: #607d8b; color: white; flex: 1; border: none; border-radius: 10px; padding: 14px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .btn-nav:hover:not(:disabled) { background-color: #455a64; }
+        .btn-nav:disabled { background-color: #cfd8dc; color: #90a4ae; cursor: not-allowed; }
+
+        #resultMsg { font-size: 20px; font-weight: bold; margin-top: 15px; min-height: 24px; }
+        #scoreLabel { font-size: 14px; font-weight: bold; color: #90a4ae; text-align: right; }
+
+        /* 옵션 그룹 (체크박스, 라디오) */
+        .radio-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 15px 0; }
+        .radio-group label { background-color: #f5f5f5; padding: 10px 14px; border-radius: 8px; border: 2px solid #e0e0e0; cursor: pointer; font-size: 14px; font-weight: bold; box-sizing: border-box; transition: 0.2s; }
+        .radio-group input { display: none; } 
+        
+        .radio-group label:has(input[type="radio"]:checked) { border-color: #2196F3; background-color: #e3f2fd; color: #1976D2; }
+        
+        /* 족보 및 파트 체크박스 전용 디자인 */
+        .radio-group label:has(input[type="checkbox"]:checked) { border-color: #FF9800; background-color: #fff3e0; color: #ef6c00; }
+        .radio-group label:has(input#jokboOnly:checked) { border-color: #FF5252; background-color: #ffebee; color: #d32f2f; }
+
+        .creator { margin-top: 40px; padding-top: 20px; border-top: 1px dashed #cfd8dc; font-size: 13px; color: #b0bec5; font-weight: bold; }
+        .btn-report { display: inline-block; margin-top: 8px; padding: 6px 12px; background-color: #FEE500; color: #3c1e1e; text-decoration: none; border-radius: 15px; font-size: 12px; font-weight: bold; }
+
+        .update-log { margin-top: 15px; font-size: 13px; color: #78909c; text-align: left; background-color: #f4f7f9; padding: 10px 15px; border-radius: 8px; border: 1px solid #eceff1; }
+        .update-log summary { font-weight: bold; cursor: pointer; color: #546e7a; outline: none; }
+        .update-log ul { margin: 10px 0 0 0; padding-left: 20px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="startScreen" class="screen active">
+        <h1>🔤 의학용어 마스터 퀴즈</h1>
+        <p id="totalCountInfo" style="color: #607d8b; font-size: 15px; font-weight: bold;">데이터 로딩 중...</p>
+        
+        <h2>[선택] 학습 모드</h2>
+        <div class="radio-group" style="margin-bottom: 25px;">
+            <label><input type="checkbox" id="jokboOnly"><span>🔥 족보 출제 용어만 풀기</span></label>
+        </div>
+
+        <h2>[1단계] 학습 파트 선택</h2>
+        <div class="radio-group" id="categoryContainer" style="margin-bottom: 25px;">
+            <label><input type="checkbox" name="partCategory" value="연결형" checked><span>연결형 (Roots)</span></label>
+            <label><input type="checkbox" name="partCategory" value="접두사" checked><span>접두사 (Prefix)</span></label>
+            <label><input type="checkbox" name="partCategory" value="접미사" checked><span>접미사 (Suffix)</span></label>
+            <label><input type="checkbox" name="partCategory" value="단수복수" checked><span>단수/복수</span></label>
+            <label><input type="checkbox" name="partCategory" value="위치" checked><span>위치/방향</span></label>
+        </div>
+
+        <h2>[2단계] 문항 수 선택</h2>
+        <div class="radio-group">
+            <label><input type="radio" name="qCount" value="10" checked><span>10문제</span></label>
+            <label><input type="radio" name="qCount" value="20"><span>20문제</span></label>
+            <label><input type="radio" name="qCount" value="30"><span>30문제</span></label>
+            <label><input type="radio" name="qCount" value="999"><span>모두 풀기</span></label>
+        </div>
+        <button class="btn-start" onclick="startQuiz()">🚀 퀴즈 시작!</button>
+    </div>
+
+    <div id="quizScreen" class="screen">
+        <div id="scoreLabel">진행도: 0 / 0</div>
+        
+        <div id="questionBox">문제가 여기에 표시됩니다.</div>
+        
+        <div id="resultMsg"></div>
+
+        <div id="explanationBox">💡 해설이 여기에 표시됩니다.</div>
+
+        <div id="optionsContainer" class="options-group"></div>
+
+        <button id="nextBtnNormal" class="btn-next" onclick="changeQuestion(1)">다음 문제로 ⏭️</button>
+        
+        <div id="navGroup" class="nav-group">
+            <button id="prevBtn" class="btn-nav" onclick="changeQuestion(-1)">◀ 이전 문제</button>
+            <button id="nextBtnNav" class="btn-nav" onclick="changeQuestion(1)">다음 문제 ▶</button>
+        </div>
+    </div>
+
+    <div id="endScreen" class="screen">
+        <h1>🎉 학습 완료!</h1>
+        <h2 id="finalMsg" style="line-height: 1.5;"></h2>
+        <button class="btn-start" onclick="location.reload()" style="background-color: #4CAF50;">🔄 파트 다시 고르기</button>
+    </div>
+
+    <div class="creator">제작자 : ch</div>
+    <div><a href="https://open.kakao.com/o/sSfluUoi" target="_blank" class="btn-report">💬 오류 및 피드백 제보</a></div>
+
+    <details class="update-log">
+        <summary>📢 업데이트 내역</summary>
+        <ul>
+            <li><b>v1.1</b> - 🔥 족보 문제 강조 및 족보 모아풀기 기능 추가</li>
+            <li><b>v1.0</b> - 🔤 파트별 선택 및 해설 기능이 탑재된 의학용어 퀴즈 배포</li>
+        </ul>
+    </details>
+</div>
+
+<script>
+    let allData = []; 
+    let quizSet = [];
+    let wrongData = [];
+    let currentIdx = 0;
+    
+    let score = 0; 
+    let totalQuestions = 0; 
+    let reviewScore = 0; 
+    let isReviewMode = false;
+
+    // 💡 5개의 열(분류, 문제, 정답, 해설, 족보여부) 파싱
+    Papa.parse("data.csv", {
+        download: true, header: false, skipEmptyLines: true,
+        complete: function(results) {
+            const rows = results.data;
+            for (let i = 1; i < rows.length; i++) {
+                const row = rows[i];
+                if (row.length < 3 || !row[0].trim()) continue;
+                
+                // E열(인덱스 4)에 'O'가 있으면 족보로 인식
+                const isJokbo = row.length >= 5 && row[4] && row[4].trim().toUpperCase() === 'O';
+
+                allData.push({ 
+                    cat: row[0].trim(),         
+                    question: row[1].trim(),    
+                    answer: row[2].trim(),      
+                    exp: row[3] ? row[3].trim() : "",
+                    isJokbo: isJokbo
+                });
+            }
+            const jokboCount = allData.filter(d => d.isJokbo).length;
+            document.getElementById('totalCountInfo').innerText = `총 ${allData.length}개 로드 완료 (🔥 족보: ${jokboCount}개)`;
+        }
+    });
+
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    function startQuiz() {
+        const selectedCats = Array.from(document.querySelectorAll('input[name="partCategory"]:checked')).map(cb => cb.value);
+        if (selectedCats.length === 0) return alert("최소 하나 이상의 파트를 선택해 주세요!");
+
+        let filtered = allData.filter(item => selectedCats.includes(item.cat));
+
+        // 💡 족보 필터링 적용
+        const isJokboOnly = document.getElementById('jokboOnly').checked;
+        if (isJokboOnly) {
+            filtered = filtered.filter(item => item.isJokbo);
+            if (filtered.length < 4) {
+                return alert(`선택하신 파트 내에 족보(O) 용어가 ${filtered.length}개뿐입니다. 4지선다를 위해 최소 4개가 필요합니다.`);
+            }
+        } else if (filtered.length < 4) {
+            return alert(`선택하신 파트의 단어가 ${filtered.length}개뿐입니다. 최소 4개 이상이 필요합니다.`);
+        }
+
+        const qCount = parseInt(document.querySelector('input[name="qCount"]:checked').value);
+        shuffle(filtered);
+        quizSet = filtered.slice(0, Math.min(qCount, filtered.length));
+        
+        totalQuestions = quizSet.length;
+        currentIdx = 0; 
+        score = 0; 
+        reviewScore = 0; 
+        wrongData = []; 
+        isReviewMode = false;
+        
+        document.getElementById('startScreen').classList.remove('active');
+        document.getElementById('quizScreen').classList.add('active');
+        loadQuestion();
+    }
+
+    function loadQuestion() {
+        if (currentIdx >= quizSet.length) {
+            if (!isReviewMode && wrongData.length > 0) {
+                if (confirm(`본 시험 종료!\n점수: ${score} / ${totalQuestions}점\n\n틀린 문제(${wrongData.length}개)를 복습하시겠습니까?`)) {
+                    isReviewMode = true;
+                    quizSet = [...wrongData];
+                    currentIdx = 0;
+                    reviewScore = 0; 
+                    loadQuestion();
+                    return;
+                }
+            }
+            document.getElementById('quizScreen').classList.remove('active');
+            document.getElementById('endScreen').classList.add('active');
+            
+            const finalMsgEl = document.getElementById('finalMsg');
+            if (isReviewMode) {
+                finalMsgEl.innerHTML = `
+                    <div style="font-size:24px; color:#1976D2; margin-bottom:10px;">📝 오답 복습 결과: ${reviewScore} / ${quizSet.length}점</div>
+                    <div style="font-size:16px; color:#78909c; margin-bottom:20px;">(본 시험 점수: ${score} / ${totalQuestions}점)</div>
+                    <span style="color:#2e7d32;">복습까지 완벽하게 완료했습니다! 💯</span>
+                `;
+            } else {
+                finalMsgEl.innerHTML = `최종 점수: ${score} / ${totalQuestions}점<br><br>고생하셨습니다!`;
+            }
+            return;
+        }
+
+        const currentQ = quizSet[currentIdx];
+        
+        // 💡 족보 뱃지와 카테고리 표시 결합
+        const badgeHtml = currentQ.isJokbo ? `<div class="jokbo-badge">🔥 족보 빈출 용어</div><br>` : '';
+        document.getElementById('questionBox').innerHTML = `<span style="font-size:14px; color:#78909c; display:block; margin-bottom:5px;">[${currentQ.cat}]</span>${badgeHtml}${currentQ.question}`;
+        
+        document.getElementById('resultMsg').innerText = "";
+        
+        document.getElementById('explanationBox').style.display = "none";
+        document.getElementById('explanationBox').innerText = "";
+        
+        document.getElementById('nextBtnNormal').style.display = "none";
+        
+        if (isReviewMode) {
+            document.getElementById('scoreLabel').innerText = `📝 오답 복습 중: ${currentIdx + 1} / ${quizSet.length}`;
+            document.getElementById('scoreLabel').style.color = "#1976D2";
+            document.getElementById('navGroup').style.display = "flex";
+            
+            document.getElementById('prevBtn').disabled = (currentIdx === 0);
+            const nextNavBtn = document.getElementById('nextBtnNav');
+            if (currentIdx === quizSet.length - 1) {
+                nextNavBtn.innerText = "복습 종료 🏁";
+                nextNavBtn.style.backgroundColor = "#4CAF50";
+            } else {
+                nextNavBtn.innerText = "다음 문제 ▶";
+                nextNavBtn.style.backgroundColor = "#607d8b";
+            }
+        } else {
+            document.getElementById('scoreLabel').innerText = `진행도: ${currentIdx + 1} / ${quizSet.length}`;
+            document.getElementById('scoreLabel').style.color = "#90a4ae";
+            document.getElementById('navGroup').style.display = "none";
+        }
+
+        let others = allData.filter(item => item.cat === currentQ.cat && item.answer !== currentQ.answer);
+        if (others.length < 3) {
+            others = allData.filter(item => item.answer !== currentQ.answer);
+        }
+        shuffle(others);
+        
+        let choices = [currentQ.answer, others[0].answer, others[1].answer, others[2].answer];
+        shuffle(choices);
+
+        const container = document.getElementById('optionsContainer');
+        container.innerHTML = "";
+        
+        choices.forEach(choice => {
+            const btn = document.createElement('button');
+            btn.className = "option-btn";
+            btn.innerText = choice;
+            btn.onclick = () => checkAnswer(btn, choice, currentQ.answer, currentQ.exp);
+            container.appendChild(btn);
+        });
+    }
+
+    function checkAnswer(btn, selected, correct, expText) {
+        const btns = document.querySelectorAll('.option-btn');
+        btns.forEach(b => b.disabled = true); 
+
+        if (selected === correct) {
+            if (!isReviewMode) { score++; } else { reviewScore++; }
+            btn.classList.add('correct');
+            document.getElementById('resultMsg').innerText = "⭕ 정답입니다!";
+            document.getElementById('resultMsg').style.color = "#4CAF50";
+        } else {
+            if (!isReviewMode) wrongData.push(quizSet[currentIdx]); 
+            btn.classList.add('wrong');
+            btns.forEach(b => { if(b.innerText === correct) b.classList.add('correct'); });
+            document.getElementById('resultMsg').innerText = "❌ 오답입니다.";
+            document.getElementById('resultMsg').style.color = "#f44336";
+        }
+        
+        if (expText && expText.trim() !== "") {
+            const expBox = document.getElementById('explanationBox');
+            expBox.innerHTML = `💡 <b>관련 예시/해설</b><br>${expText}`;
+            expBox.style.display = "block";
+        }
+        
+        if (!isReviewMode) {
+            document.getElementById('nextBtnNormal').style.display = "block";
+        }
+    }
+
+    function changeQuestion(offset) {
+        currentIdx += offset;
+        loadQuestion();
+    }
+</script>
+</body>
+</html>
