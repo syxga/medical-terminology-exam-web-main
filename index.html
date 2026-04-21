@@ -18,13 +18,13 @@
         .jokbo-badge { display: inline-block; background-color: #FF5252; color: white; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 20px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(255, 82, 82, 0.3); animation: pulse 1.5s infinite; }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
 
-        /* 💡 해설(예시 및 의미) 상자 디자인 강화 */
         #explanationBox { display: none; background-color: #fff3e0; border: 2px dashed #ffb74d; padding: 15px; border-radius: 10px; margin-top: 15px; text-align: left; line-height: 1.6; animation: fadeIn 0.4s ease; }
         .exp-title { font-size: 14px; font-weight: bold; color: #e65100; margin-bottom: 5px; display: block; }
         .exp-word { font-size: 17px; font-weight: bold; color: #d84315; }
         .exp-meaning { font-size: 16px; color: #455a64; margin-left: 5px; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
 
+        /* 4지선다 버튼 */
         .options-group { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
         .option-btn { background-color: #fff; border: 2px solid #cfd8dc; border-radius: 12px; padding: 16px; font-size: 18px; font-weight: bold; color: #455a64; cursor: pointer; transition: 0.2s; text-align: center; }
         .option-btn:active { transform: scale(0.98); }
@@ -32,6 +32,16 @@
         .option-btn.wrong { background-color: #ffebee !important; border-color: #f44336 !important; color: #c62828 !important; text-decoration: line-through; }
         .option-btn:disabled { cursor: default; opacity: 0.9; }
 
+        /* 💡 주관식 입력창 디자인 */
+        #subjectiveContainer { display: none; margin-top: 20px; }
+        #subjectiveInput { width: 100%; padding: 16px; font-size: 18px; font-weight: bold; border: 2px solid #cfd8dc; border-radius: 12px; box-sizing: border-box; text-align: center; margin-bottom: 12px; outline: none; transition: 0.3s; color: #455a64; }
+        #subjectiveInput:focus { border-color: #2196F3; box-shadow: 0 0 8px rgba(33, 150, 243, 0.2); }
+        #subjectiveInput:disabled { background-color: #f5f5f5; color: #90a4ae; }
+        .btn-submit { background-color: #4CAF50; color: white; width: 100%; padding: 16px; font-size: 18px; font-weight: bold; border: none; border-radius: 12px; cursor: pointer; transition: 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .btn-submit:active { transform: scale(0.98); }
+        .btn-submit:disabled { background-color: #cfd8dc; cursor: not-allowed; }
+
+        /* 일반 버튼 */
         .btn-start { background-color: #2196F3; color: white; font-size: 18px; width: 100%; max-width: 300px; padding: 16px; margin-top: 30px; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; }
         .btn-next { background-color: #37474f; color: white; padding: 15px; border-radius: 10px; width: 100%; margin-top: 20px; font-weight: bold; display: none; border: none; font-size: 16px; cursor: pointer; }
         
@@ -40,7 +50,7 @@
         .btn-nav:hover:not(:disabled) { background-color: #455a64; }
         .btn-nav:disabled { background-color: #cfd8dc; color: #90a4ae; cursor: not-allowed; }
 
-        #resultMsg { font-size: 20px; font-weight: bold; margin-top: 15px; min-height: 24px; }
+        #resultMsg { font-size: 20px; font-weight: bold; margin-top: 15px; min-height: 24px; word-break: keep-all; }
         #scoreLabel { font-size: 14px; font-weight: bold; color: #90a4ae; text-align: right; }
 
         .radio-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 15px 0; }
@@ -76,7 +86,7 @@
             <label><input type="checkbox" name="partCategory" value="연결형" checked><span>연결형 (Roots)</span></label>
             <label><input type="checkbox" name="partCategory" value="접두사" checked><span>접두사 (Prefix)</span></label>
             <label><input type="checkbox" name="partCategory" value="접미사" checked><span>접미사 (Suffix)</span></label>
-            <label><input type="checkbox" name="partCategory" value="단수복수" checked><span>단수/복수</span></label>
+            <label><input type="checkbox" name="partCategory" value="단수복수" checked><span>단수/복수 (✍️ 주관식)</span></label>
             <label><input type="checkbox" name="partCategory" value="위치" checked><span>위치/방향</span></label>
         </div>
 
@@ -101,6 +111,11 @@
 
         <div id="optionsContainer" class="options-group"></div>
 
+        <div id="subjectiveContainer">
+            <input type="text" id="subjectiveInput" placeholder="정답을 영어로 입력하세요" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+            <button id="subjectiveSubmitBtn" class="btn-submit">✅ 정답 제출 (Enter)</button>
+        </div>
+
         <button id="nextBtnNormal" class="btn-next" onclick="changeQuestion(1)">다음 문제로 ⏭️</button>
         
         <div id="navGroup" class="nav-group">
@@ -121,7 +136,8 @@
     <details class="update-log">
         <summary>📢 업데이트 내역</summary>
         <ul>
-            <li><b>v1.2</b> - 💡 해설란에 '예시 단어'와 '예시의 의미' 동시 표기 기능 추가</li>
+            <li><b>v1.3</b> - ✍️ '단수/복수' 파트 전용 주관식 타이핑 모드 도입</li>
+            <li><b>v1.2</b> - 💡 해설란에 '예시 단어'와 '예시의 의미' 표기 기능 추가</li>
             <li><b>v1.1</b> - 🔥 족보 문제 강조 및 족보 모아풀기 기능 추가</li>
             <li><b>v1.0</b> - 🔤 파트별 선택 및 해설 기능이 탑재된 의학용어 퀴즈 배포</li>
         </ul>
@@ -139,7 +155,6 @@
     let reviewScore = 0; 
     let isReviewMode = false;
 
-    // 💡 6개의 열(분류, 문제, 정답, 예시단어, 예시의미, 족보여부) 파싱
     Papa.parse("data.csv", {
         download: true, header: false, skipEmptyLines: true,
         complete: function(results) {
@@ -148,20 +163,34 @@
                 const row = rows[i];
                 if (row.length < 3 || !row[0].trim()) continue;
                 
-                // F열(인덱스 5)에 'O'가 있으면 족보로 인식
                 const isJokbo = row.length >= 6 && row[5] && row[5].trim().toUpperCase() === 'O';
 
                 allData.push({ 
                     cat: row[0].trim(),         
                     question: row[1].trim(),    
                     answer: row[2].trim(),      
-                    exampleWord: row[3] ? row[3].trim() : "",    // D열: 예시 단어
-                    exampleMeaning: row[4] ? row[4].trim() : "", // E열: 예시 의미
+                    exampleWord: row[3] ? row[3].trim() : "",    
+                    exampleMeaning: row[4] ? row[4].trim() : "", 
                     isJokbo: isJokbo
                 });
             }
             const jokboCount = allData.filter(d => d.isJokbo).length;
             document.getElementById('totalCountInfo').innerText = `총 ${allData.length}개 로드 완료 (🔥 족보: ${jokboCount}개)`;
+        }
+    });
+
+    // 주관식 입력창에서 Enter 키 누를 때 작동 로직
+    document.getElementById('subjectiveInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            const submitBtn = document.getElementById('subjectiveSubmitBtn');
+            const nextBtn = document.getElementById('nextBtnNormal');
+            
+            if (!submitBtn.disabled) {
+                submitBtn.click(); // 정답 제출
+            } else if (nextBtn.style.display === "block") {
+                nextBtn.click(); // 이미 냈으면 다음 문제로
+            }
         }
     });
 
@@ -182,7 +211,7 @@
         if (isJokboOnly) {
             filtered = filtered.filter(item => item.isJokbo);
             if (filtered.length < 4) {
-                return alert(`선택하신 파트 내에 족보(O) 용어가 ${filtered.length}개뿐입니다. 4지선다를 위해 최소 4개가 필요합니다.`);
+                return alert(`선택하신 파트 내에 족보(O) 용어가 ${filtered.length}개뿐입니다. 출제를 위해 최소 4개가 필요합니다.`);
             }
         } else if (filtered.length < 4) {
             return alert(`선택하신 파트의 단어가 ${filtered.length}개뿐입니다. 최소 4개 이상이 필요합니다.`);
@@ -241,9 +270,9 @@
         
         document.getElementById('explanationBox').style.display = "none";
         document.getElementById('explanationBox').innerHTML = "";
-        
         document.getElementById('nextBtnNormal').style.display = "none";
         
+        // 상단 바 UI 처리
         if (isReviewMode) {
             document.getElementById('scoreLabel').innerText = `📝 오답 복습 중: ${currentIdx + 1} / ${quizSet.length}`;
             document.getElementById('scoreLabel').style.color = "#1976D2";
@@ -264,29 +293,92 @@
             document.getElementById('navGroup').style.display = "none";
         }
 
-        let others = allData.filter(item => item.cat === currentQ.cat && item.answer !== currentQ.answer);
-        if (others.length < 3) {
-            others = allData.filter(item => item.answer !== currentQ.answer);
-        }
-        shuffle(others);
-        
-        let choices = [currentQ.answer, others[0].answer, others[1].answer, others[2].answer];
-        shuffle(choices);
+        const optionsContainer = document.getElementById('optionsContainer');
+        const subjectiveContainer = document.getElementById('subjectiveContainer');
+        const subjectiveInput = document.getElementById('subjectiveInput');
+        const subjectiveSubmitBtn = document.getElementById('subjectiveSubmitBtn');
 
-        const container = document.getElementById('optionsContainer');
-        container.innerHTML = "";
-        
-        choices.forEach(choice => {
-            const btn = document.createElement('button');
-            btn.className = "option-btn";
-            btn.innerText = choice;
-            // 💡 함수 호출 시 예시 단어와 의미를 각각 넘겨줌
-            btn.onclick = () => checkAnswer(btn, choice, currentQ.answer, currentQ.exampleWord, currentQ.exampleMeaning);
-            container.appendChild(btn);
-        });
+        // 💡 단수복수 파트일 때는 주관식 모드 실행
+        if (currentQ.cat === '단수복수') {
+            optionsContainer.style.display = "none";
+            subjectiveContainer.style.display = "block";
+            
+            // 입력창 초기화
+            subjectiveInput.value = "";
+            subjectiveInput.disabled = false;
+            subjectiveInput.style.backgroundColor = "#fff";
+            subjectiveInput.style.borderColor = "#cfd8dc";
+            subjectiveSubmitBtn.disabled = false;
+            
+            // 제출 버튼 동작 설정
+            subjectiveSubmitBtn.onclick = () => checkSubjectiveAnswer(currentQ.answer, currentQ.exampleWord, currentQ.exampleMeaning);
+
+            // 편리성을 위해 입력창 자동 포커스 (모바일은 키보드가 바로 올라올 수 있음)
+            setTimeout(() => { subjectiveInput.focus(); }, 100);
+
+        } else {
+            // 다른 파트일 때는 기존 4지선다 모드 실행
+            subjectiveContainer.style.display = "none";
+            optionsContainer.style.display = "flex";
+
+            let others = allData.filter(item => item.cat === currentQ.cat && item.answer !== currentQ.answer);
+            if (others.length < 3) {
+                others = allData.filter(item => item.answer !== currentQ.answer);
+            }
+            shuffle(others);
+            
+            let choices = [currentQ.answer, others[0].answer, others[1].answer, others[2].answer];
+            shuffle(choices);
+
+            optionsContainer.innerHTML = "";
+            choices.forEach(choice => {
+                const btn = document.createElement('button');
+                btn.className = "option-btn";
+                btn.innerText = choice;
+                btn.onclick = () => checkObjectiveAnswer(btn, choice, currentQ.answer, currentQ.exampleWord, currentQ.exampleMeaning);
+                optionsContainer.appendChild(btn);
+            });
+        }
     }
 
-    function checkAnswer(btn, selected, correct, exWord, exMeaning) {
+    // 💡 주관식 정답 체크 로직
+    function checkSubjectiveAnswer(correct, exWord, exMeaning) {
+        const inputEl = document.getElementById('subjectiveInput');
+        const submitBtn = document.getElementById('subjectiveSubmitBtn');
+        const userAnswer = inputEl.value.trim().toLowerCase();
+        const correctAnswer = correct.trim().toLowerCase();
+
+        if (userAnswer === "") {
+            alert("정답을 입력해주세요!");
+            return;
+        }
+
+        inputEl.disabled = true;
+        submitBtn.disabled = true;
+
+        if (userAnswer === correctAnswer) {
+            if (!isReviewMode) { score++; } else { reviewScore++; }
+            inputEl.style.borderColor = "#4CAF50";
+            inputEl.style.backgroundColor = "#e8f5e9";
+            document.getElementById('resultMsg').innerText = "⭕ 정답입니다!";
+            document.getElementById('resultMsg').style.color = "#4CAF50";
+        } else {
+            if (!isReviewMode) wrongData.push(quizSet[currentIdx]); 
+            inputEl.style.borderColor = "#f44336";
+            inputEl.style.backgroundColor = "#ffebee";
+            document.getElementById('resultMsg').innerText = `❌ 오답입니다. (정답: ${correct})`;
+            document.getElementById('resultMsg').style.color = "#f44336";
+        }
+
+        showExplanation(exWord, exMeaning);
+        
+        if (!isReviewMode) {
+            document.getElementById('nextBtnNormal').style.display = "block";
+        }
+    }
+
+    // 객관식 정답 체크 로직
+    function checkObjectiveAnswer(btn, selected, correct, exWord, exMeaning) {
         const btns = document.querySelectorAll('.option-btn');
         btns.forEach(b => b.disabled = true); 
 
@@ -303,7 +395,15 @@
             document.getElementById('resultMsg').style.color = "#f44336";
         }
         
-        // 💡 엑셀에 적어둔 예시 단어와 뜻 조합해서 출력
+        showExplanation(exWord, exMeaning);
+        
+        if (!isReviewMode) {
+            document.getElementById('nextBtnNormal').style.display = "block";
+        }
+    }
+
+    // 해설 표시 로직 공통화
+    function showExplanation(exWord, exMeaning) {
         if ((exWord && exWord.trim() !== "") || (exMeaning && exMeaning.trim() !== "")) {
             const expBox = document.getElementById('explanationBox');
             let expHtml = `<span class="exp-title">💡 대표 예시</span>`;
@@ -312,10 +412,6 @@
             
             expBox.innerHTML = expHtml;
             expBox.style.display = "block";
-        }
-        
-        if (!isReviewMode) {
-            document.getElementById('nextBtnNormal').style.display = "block";
         }
     }
 
