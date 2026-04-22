@@ -163,13 +163,14 @@
     <details class="update-log">
         <summary>📢 업데이트 내역</summary>
         <ul>
-            <li><b>v1.12</b> - 🐛 약자(h/o 등) 슬래시 오작동 픽스 (복수 정답 판정 개선)</li>
+            <li><b>v1.13</b> - ⌨️ Enter 키만으로 '제출' 및 '다음 문제 이동'이 가능한 글로벌 단축키 적용</li>
+            <li><b>v1.12</b> - 🐛 약자(h/o 등) 슬래시 오작동 픽스</li>
             <li><b>v1.11</b> - 🧠 족보+PPT 동시 선택 시 '합집합(OR)' 필터링으로 수정</li>
-            <li><b>v1.10</b> - ✍️ '약자(Abbreviations)' 파트 주관식 모드로 변경</li>
-            <li><b>v1.9</b> - 🔠 '약자(Abbreviations)' 파트 추가</li>
-            <li><b>v1.8</b> - 🖥️ PPT 출제 용어 표시(뱃지) 및 필터링 기능 추가</li>
-            <li><b>v1.7</b> - 📖 눈으로 훑어보는 '단어장 학습 모드' 추가</li>
-            <li><b>v1.6</b> - ✍️ 주관식 '복수 정답' 인정 로직 추가</li>
+            <li><b>v1.10</b> - ✍️ '약자' 파트 주관식 모드로 변경</li>
+            <li><b>v1.9</b> - 🔠 '약자' 파트 추가</li>
+            <li><b>v1.8</b> - 🖥️ PPT 출제 용어 표시 및 필터링 기능 추가</li>
+            <li><b>v1.7</b> - 📖 단어장 학습 모드 추가</li>
+            <li><b>v1.6</b> - ✍️ 주관식 '복수 정답' 지원 (쉼표/슬래시)</li>
         </ul>
     </details>
 </div>
@@ -213,13 +214,39 @@
         }
     });
 
-    document.getElementById('subjectiveInput').addEventListener('keypress', function(e) {
+    // 💡 v1.13 핵심 패치: 페이지 전체 어디서든 Enter 키를 누르면 다음 로직 수행
+    document.addEventListener('keydown', function(e) {
         if (e.key === 'Enter') {
-            e.preventDefault();
-            const submitBtn = document.getElementById('subjectiveSubmitBtn');
-            const nextBtn = document.getElementById('nextBtnNormal');
-            if (!submitBtn.disabled) submitBtn.click();
-            else if (nextBtn.style.display === "block") nextBtn.click();
+            if (document.getElementById('quizScreen').classList.contains('active')) {
+                e.preventDefault(); // 기본 스크롤 동작 방지
+                
+                const nextBtnNormal = document.getElementById('nextBtnNormal');
+                const submitBtn = document.getElementById('subjectiveSubmitBtn');
+                const subContainer = document.getElementById('subjectiveContainer');
+                
+                // 1. 주관식 제출 대기 중 (입력 완료 후 Enter)
+                if (subContainer.style.display === 'block' && !submitBtn.disabled) {
+                    submitBtn.click();
+                    return;
+                }
+
+                // 2. 일반 모드: 정답 확인 후 다음 문제로 (Enter 한 번 더)
+                if (nextBtnNormal.style.display === 'block') {
+                    nextBtnNormal.click();
+                    return;
+                }
+
+                // 3. 오답 복습 모드: 정답 확인 후 다음 문제로
+                if (isReviewMode) {
+                    const firstOption = document.querySelector('.option-btn');
+                    const isObjDone = firstOption && firstOption.disabled;
+                    const isSubDone = subContainer.style.display === 'block' && submitBtn.disabled;
+                    
+                    if (isObjDone || isSubDone) {
+                        document.getElementById('nextBtnNav').click();
+                    }
+                }
+            }
         }
     });
 
@@ -412,8 +439,6 @@
 
         sIn.disabled = true; sBtn.disabled = true;
 
-        // 💡 v1.12 핵심 패치: 쉼표(,)와 '양옆 공백이 있는 슬래시( / )'만 복수정답 구분자로 처리
-        // h/o 같은 약자의 슬래시가 쪼개지는 버그 완벽 수정
         const ansList = correct.toLowerCase().split(/,|\s+\/\s+/).map(a => a.trim());
 
         if (ansList.includes(user)) {
