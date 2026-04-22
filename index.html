@@ -15,7 +15,10 @@
         h2 { font-size: 18px; color: #546e7a; margin-top: 20px; margin-bottom: 10px; }
 
         #questionBox { background-color: #e3f2fd; border-left: 6px solid #2196F3; padding: 20px; border-radius: 12px; margin: 20px 0; font-size: 19px; font-weight: bold; line-height: 1.6; color: #1565c0; text-align: left; word-break: keep-all; position: relative; }
-        .jokbo-badge { display: inline-block; background-color: #FF5252; color: white; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 20px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(255, 82, 82, 0.3); animation: pulse 1.5s infinite; }
+        
+        .badge-container { margin-bottom: 10px; }
+        .jokbo-badge { display: inline-block; background-color: #FF5252; color: white; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 20px; margin-right: 5px; box-shadow: 0 2px 4px rgba(255, 82, 82, 0.3); animation: pulse 1.5s infinite; }
+        .ppt-badge { display: inline-block; background-color: #3F51B5; color: white; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 20px; margin-right: 5px; box-shadow: 0 2px 4px rgba(63, 81, 181, 0.3); }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
 
         #explanationBox { display: none; background-color: #fff3e0; border: 2px dashed #ffb74d; padding: 15px; border-radius: 10px; margin-top: 15px; text-align: left; line-height: 1.6; animation: fadeIn 0.4s ease; }
@@ -60,9 +63,10 @@
         .radio-group label:has(input[type="radio"]:checked) { border-color: #2196F3; background-color: #e3f2fd; color: #1976D2; }
         .radio-group label:has(input[type="checkbox"]:checked) { border-color: #FF9800; background-color: #fff3e0; color: #ef6c00; }
         .radio-group label:has(input#jokboOnly:checked) { border-color: #FF5252; background-color: #ffebee; color: #d32f2f; }
+        .radio-group label:has(input#pptOnly:checked) { border-color: #3F51B5; background-color: #E8EAF6; color: #303F9F; }
         .radio-group label:has(input#hardMode:checked) { border-color: #9C27B0; background-color: #F3E5F5; color: #7B1FA2; }
 
-        /* 💡 단어장(학습 모드) 카드 디자인 */
+        /* 단어장(학습 모드) 카드 디자인 */
         .learning-card { background: #fff; border: 2px solid #e0e0e0; border-radius: 12px; padding: 18px; margin-bottom: 12px; text-align: left; box-shadow: 0 4px 6px rgba(0,0,0,0.02); transition: 0.2s; }
         .learning-card:hover { border-color: #4CAF50; box-shadow: 0 4px 12px rgba(76, 175, 80, 0.1); }
         .lc-header { margin-bottom: 8px; font-size: 13px; color: #78909c; font-weight: bold; display: flex; align-items: center; }
@@ -83,11 +87,12 @@
 <div class="container">
     <div id="startScreen" class="screen active">
         <h1>🔤 의학용어 마스터 퀴즈</h1>
-        <p id="totalCountInfo" style="color: #607d8b; font-size: 15px; font-weight: bold;">데이터 로딩 중...</p>
+        <p id="totalCountInfo" style="color: #607d8b; font-size: 14px; font-weight: bold; line-height: 1.5;">데이터 로딩 중...</p>
         
         <h2>[선택] 옵션 모드</h2>
         <div class="radio-group" style="margin-bottom: 25px;">
             <label><input type="checkbox" id="jokboOnly"><span>🔥 족보 집중 풀기</span></label>
+            <label><input type="checkbox" id="pptOnly"><span>🖥️ PPT 내용 집중 풀기</span></label>
             <label><input type="checkbox" id="hardMode"><span>😈 하드 모드 (10지선다)</span></label>
         </div>
 
@@ -99,6 +104,7 @@
             <label><input type="checkbox" name="partCategory" value="단수/복수" checked><span>단수/복수 (✍️ 주관식)</span></label>
             <label><input type="checkbox" name="partCategory" value="위치" checked><span>위치/방향</span></label>
             <label><input type="checkbox" name="partCategory" value="계통" checked><span>계통 (Systems) (✍️ 주관식)</span></label>
+            <label><input type="checkbox" name="partCategory" value="약자" checked><span>약자 (Abbreviations) (✍️ 주관식)</span></label>
         </div>
 
         <h2>[2단계] 문항 수 선택 (퀴즈용)</h2>
@@ -140,8 +146,7 @@
         <h1>📖 단어장 학습 모드</h1>
         <p id="learningCountInfo" style="color: #607d8b; font-size: 15px; font-weight: bold; margin-bottom: 20px;"></p>
         
-        <div id="learningListContainer" style="display: flex; flex-direction: column;">
-            </div>
+        <div id="learningListContainer" style="display: flex; flex-direction: column;"></div>
 
         <button class="btn-start" onclick="location.reload()" style="background-color: #607d8b; margin-top: 25px;">🏠 처음으로 돌아가기</button>
     </div>
@@ -158,11 +163,12 @@
     <details class="update-log">
         <summary>📢 업데이트 내역</summary>
         <ul>
-            <li><b>v1.7</b> - 📖 퀴즈 전 눈으로 훑어보는 '단어장 학습 모드' 추가</li>
-            <li><b>v1.6</b> - ✍️ 주관식 문제 '복수 정답' 인정 로직 추가 (쉼표/슬래시)</li>
+            <li><b>v1.10</b> - ✍️ '약자(Abbreviations)' 파트 주관식 모드로 변경</li>
+            <li><b>v1.9</b> - 🔠 '약자(Abbreviations)' 파트 추가</li>
+            <li><b>v1.8</b> - 🖥️ PPT 출제 용어 표시(뱃지) 및 필터링 기능 추가</li>
+            <li><b>v1.7</b> - 📖 눈으로 훑어보는 '단어장 학습 모드' 추가</li>
+            <li><b>v1.6</b> - ✍️ 주관식 '복수 정답' 인정 로직 추가</li>
             <li><b>v1.5</b> - 🏥 '계통' 파트 추가 및 주관식 모드 적용</li>
-            <li><b>v1.4</b> - ✍️ '단수/복수' 파트 전용 주관식 모드 도입</li>
-            <li><b>v1.3</b> - 💡 해설란에 예시 단어와 의미 동시 표기 기능</li>
         </ul>
     </details>
 </div>
@@ -186,18 +192,23 @@
             for (let i = 1; i < rows.length; i++) {
                 const row = rows[i];
                 if (row.length < 3 || !row[0].trim()) continue;
+                
                 const isJokbo = row.length >= 6 && row[5] && row[5].trim().toUpperCase() === 'O';
+                const isPpt = row.length >= 7 && row[6] && row[6].trim().toUpperCase() === 'O';
+
                 allData.push({ 
                     cat: row[0].trim(),         
                     question: row[1].trim(),    
                     answer: row[2].trim(),      
                     exampleWord: row[3] ? row[3].trim() : "",    
                     exampleMeaning: row[4] ? row[4].trim() : "", 
-                    isJokbo: isJokbo
+                    isJokbo: isJokbo,
+                    isPpt: isPpt
                 });
             }
             const jokboCount = allData.filter(d => d.isJokbo).length;
-            document.getElementById('totalCountInfo').innerText = `총 ${allData.length}개 로드 완료 (🔥 족보: ${jokboCount}개)`;
+            const pptCount = allData.filter(d => d.isPpt).length;
+            document.getElementById('totalCountInfo').innerHTML = `총 ${allData.length}개 로드 완료<br>(🔥 족보: ${jokboCount}개 / 🖥️ PPT: ${pptCount}개)`;
         }
     });
 
@@ -218,7 +229,6 @@
         }
     }
 
-    // 💡 단어장 학습 모드 실행 함수
     function startLearningMode() {
         const selectedCats = Array.from(document.querySelectorAll('input[name="partCategory"]:checked')).map(cb => cb.value);
         if (selectedCats.length === 0) return alert("최소 하나 이상의 파트를 선택해 주세요!");
@@ -226,28 +236,29 @@
         let filtered = allData.filter(item => selectedCats.includes(item.cat));
 
         const isJokboOnly = document.getElementById('jokboOnly').checked;
-        if (isJokboOnly) {
-            filtered = filtered.filter(item => item.isJokbo);
-        }
+        const isPptOnly = document.getElementById('pptOnly').checked;
+
+        if (isJokboOnly) filtered = filtered.filter(item => item.isJokbo);
+        if (isPptOnly) filtered = filtered.filter(item => item.isPpt);
 
         if (filtered.length === 0) {
-            return alert("선택하신 조건(파트 및 족보 여부)에 맞는 단어가 없습니다.");
+            return alert("선택하신 조건(파트 및 옵션)에 맞는 단어가 없습니다.");
         }
 
         const listContainer = document.getElementById('learningListContainer');
-        listContainer.innerHTML = ""; // 기존 목록 초기화
+        listContainer.innerHTML = ""; 
 
-        // 단어장 카드 생성
         filtered.forEach(item => {
-            const badgeHtml = item.isJokbo ? `<span class="jokbo-badge" style="margin-bottom:0; margin-left:8px; animation:none; font-size:11px;">🔥 족보</span>` : '';
+            const jokboBadge = item.isJokbo ? `<span class="jokbo-badge" style="margin-bottom:0; margin-left:8px; animation:none; font-size:11px;">🔥 족보</span>` : '';
+            const pptBadge = item.isPpt ? `<span class="ppt-badge" style="margin-bottom:0; margin-left:5px; font-size:11px;">🖥️ PPT</span>` : '';
+            
             let cardHtml = `
                 <div class="learning-card">
-                    <div class="lc-header">[${item.cat}] ${badgeHtml}</div>
+                    <div class="lc-header">[${item.cat}] ${jokboBadge}${pptBadge}</div>
                     <div class="lc-question">${item.question}</div>
                     <div class="lc-answer">👉 정답: <span>${item.answer}</span></div>
             `;
             
-            // 예시가 있을 경우에만 예시 박스 추가
             if (item.exampleWord || item.exampleMeaning) {
                 cardHtml += `<div class="lc-example">💡 예시: <b>${item.exampleWord}</b> ${item.exampleMeaning ? `(${item.exampleMeaning})` : ''}</div>`;
             }
@@ -258,10 +269,9 @@
 
         document.getElementById('learningCountInfo').innerText = `총 ${filtered.length}개의 단어가 검색되었습니다.`;
 
-        // 화면 전환
         document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
         document.getElementById('learningScreen').classList.add('active');
-        window.scrollTo(0, 0); // 화면 맨 위로 스크롤
+        window.scrollTo(0, 0);
     }
 
     function startQuiz() {
@@ -272,14 +282,16 @@
         let filtered = allData.filter(item => selectedCats.includes(item.cat));
 
         const isJokboOnly = document.getElementById('jokboOnly').checked;
-        if (isJokboOnly) {
-            filtered = filtered.filter(item => item.isJokbo);
-        }
+        const isPptOnly = document.getElementById('pptOnly').checked;
+
+        if (isJokboOnly) filtered = filtered.filter(item => item.isJokbo);
+        if (isPptOnly) filtered = filtered.filter(item => item.isPpt);
 
         const requiredCount = isHardModeActive ? 10 : 4;
         
         if (filtered.length < requiredCount) {
-            const onlySubjective = selectedCats.every(cat => cat === '단수/복수' || cat === '계통');
+            // 💡 약자 파트도 주관식이므로 검사 예외 조건에 추가
+            const onlySubjective = selectedCats.every(cat => cat === '단수/복수' || cat === '계통' || cat === '약자');
             if (!onlySubjective) {
                 return alert(`해당 조건에 맞는 단어가 ${filtered.length}개뿐입니다. 최소 ${requiredCount}개 이상이 필요합니다.`);
             } else if (filtered.length === 0) {
@@ -323,8 +335,13 @@
         }
 
         const currentQ = quizSet[currentIdx];
-        const badgeHtml = currentQ.isJokbo ? `<div class="jokbo-badge">🔥 족보 빈출 용어</div><br>` : '';
-        document.getElementById('questionBox').innerHTML = `<span style="font-size:14px; color:#78909c; display:block; margin-bottom:5px;">[${currentQ.cat}]</span>${badgeHtml}${currentQ.question}`;
+        
+        const jokboBadge = currentQ.isJokbo ? `<span class="jokbo-badge">🔥 족보 빈출</span>` : '';
+        const pptBadge = currentQ.isPpt ? `<span class="ppt-badge">🖥️ PPT 출제</span>` : '';
+        const badges = (jokboBadge || pptBadge) ? `<div class="badge-container">${jokboBadge}${pptBadge}</div>` : '';
+        
+        document.getElementById('questionBox').innerHTML = `<span style="font-size:14px; color:#78909c; display:block; margin-bottom:5px;">[${currentQ.cat}]</span>${badges}${currentQ.question}`;
+        
         document.getElementById('resultMsg').innerText = "";
         document.getElementById('explanationBox').style.display = "none";
         document.getElementById('nextBtnNormal').style.display = "none";
@@ -345,7 +362,8 @@
         const optionsContainer = document.getElementById('optionsContainer');
         const subjectiveContainer = document.getElementById('subjectiveContainer');
 
-        if (currentQ.cat === '단수/복수' || currentQ.cat === '계통') {
+        // 💡 약자 파트일 때도 주관식 입력창 표시
+        if (currentQ.cat === '단수/복수' || currentQ.cat === '계통' || currentQ.cat === '약자') {
             optionsContainer.style.display = "none";
             subjectiveContainer.style.display = "block";
             const sIn = document.getElementById('subjectiveInput');
