@@ -163,6 +163,7 @@
     <details class="update-log">
         <summary>📢 업데이트 내역</summary>
         <ul>
+            <li><b>v1.11</b> - 🧠 족보+PPT 동시 선택 시 '합집합(OR)'으로 풍성하게 필터링되도록 수정</li>
             <li><b>v1.10</b> - ✍️ '약자(Abbreviations)' 파트 주관식 모드로 변경</li>
             <li><b>v1.9</b> - 🔠 '약자(Abbreviations)' 파트 추가</li>
             <li><b>v1.8</b> - 🖥️ PPT 출제 용어 표시(뱃지) 및 필터링 기능 추가</li>
@@ -238,8 +239,14 @@
         const isJokboOnly = document.getElementById('jokboOnly').checked;
         const isPptOnly = document.getElementById('pptOnly').checked;
 
-        if (isJokboOnly) filtered = filtered.filter(item => item.isJokbo);
-        if (isPptOnly) filtered = filtered.filter(item => item.isPpt);
+        // 💡 교집합(AND)에서 합집합(OR)으로 똑똑하게 수정된 부분!
+        if (isJokboOnly && isPptOnly) {
+            filtered = filtered.filter(item => item.isJokbo || item.isPpt);
+        } else if (isJokboOnly) {
+            filtered = filtered.filter(item => item.isJokbo);
+        } else if (isPptOnly) {
+            filtered = filtered.filter(item => item.isPpt);
+        }
 
         if (filtered.length === 0) {
             return alert("선택하신 조건(파트 및 옵션)에 맞는 단어가 없습니다.");
@@ -284,13 +291,18 @@
         const isJokboOnly = document.getElementById('jokboOnly').checked;
         const isPptOnly = document.getElementById('pptOnly').checked;
 
-        if (isJokboOnly) filtered = filtered.filter(item => item.isJokbo);
-        if (isPptOnly) filtered = filtered.filter(item => item.isPpt);
+        // 💡 교집합(AND)에서 합집합(OR)으로 똑똑하게 수정된 부분!
+        if (isJokboOnly && isPptOnly) {
+            filtered = filtered.filter(item => item.isJokbo || item.isPpt);
+        } else if (isJokboOnly) {
+            filtered = filtered.filter(item => item.isJokbo);
+        } else if (isPptOnly) {
+            filtered = filtered.filter(item => item.isPpt);
+        }
 
         const requiredCount = isHardModeActive ? 10 : 4;
         
         if (filtered.length < requiredCount) {
-            // 💡 약자 파트도 주관식이므로 검사 예외 조건에 추가
             const onlySubjective = selectedCats.every(cat => cat === '단수/복수' || cat === '계통' || cat === '약자');
             if (!onlySubjective) {
                 return alert(`해당 조건에 맞는 단어가 ${filtered.length}개뿐입니다. 최소 ${requiredCount}개 이상이 필요합니다.`);
@@ -362,7 +374,6 @@
         const optionsContainer = document.getElementById('optionsContainer');
         const subjectiveContainer = document.getElementById('subjectiveContainer');
 
-        // 💡 약자 파트일 때도 주관식 입력창 표시
         if (currentQ.cat === '단수/복수' || currentQ.cat === '계통' || currentQ.cat === '약자') {
             optionsContainer.style.display = "none";
             subjectiveContainer.style.display = "block";
