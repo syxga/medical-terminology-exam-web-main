@@ -104,30 +104,30 @@
 연결형,"formation (형성, 형체, 체)",~plasm,,,
 연결형,"(몸통, 체, 소체)",~some,,,
 연결형,"형상, 분류",~type,,,
-단수복수,vertebra,vertebrae,,,o
-단수복수,bursa,bursae,,,
-단수복수,bulla,bullae,,,
-단수복수,anastomosis,anastomoses,,,
-단수복수,metastasis,metastases,,,
-단수복수,epiphysis,epiphyses,,,
-단수복수,prosthesis,prostheses,,,
-단수복수,pubis,pubes,,,
-단수복수,apex,apices,,,o
-단수복수,varix,varices,,,
-단수복수,ganglion,ganglia,,,o
-단수복수,spermatozoon,spermatozoa,,,
-단수복수,bacterium,bacteria,,,
-단수복수,diverticulum,diverticula,,,
-단수복수,ovum,ova,,,o
-단수복수,calculus,calculi,,,
-단수복수,bronchus,bronchi,,,o
-단수복수,nucleus,nuclei,,,
-단수복수,foramen,foramina,,,
-단수복수,iris,irides,,,
-단수복수,femur,femora,,,
-단수복수,anomaly,anomalies,,,
-단수복수,biopsy,biopsies,,,
-단수복수,adenoma,adenomata,,,
+단수/복수,vertebra,vertebrae,,,o
+단수/복수,bursa,bursae,,,
+단수/복수,bulla,bullae,,,
+단수/복수,anastomosis,anastomoses,,,
+단수/복수,metastasis,metastases,,,
+단수/복수,epiphysis,epiphyses,,,
+단수/복수,prosthesis,prostheses,,,
+단수/복수,pubis,pubes,,,
+단수/복수,apex,apices,,,o
+단수/복수,varix,varices,,,
+단수/복수,ganglion,ganglia,,,o
+단수/복수,spermatozoon,spermatozoa,,,
+단수/복수,bacterium,bacteria,,,
+단수/복수,diverticulum,diverticula,,,
+단수/복수,ovum,ova,,,o
+단수/복수,calculus,calculi,,,
+단수/복수,bronchus,bronchi,,,o
+단수/복수,nucleus,nuclei,,,
+단수/복수,foramen,foramina,,,
+단수/복수,iris,irides,,,
+단수/복수,femur,femora,,,
+단수/복수,anomaly,anomalies,,,
+단수/복수,biopsy,biopsies,,,
+단수/복수,adenoma,adenomata,,,
 접미사,pain (통증),algia," arthralgia, otalgia, neuralgia, myalgia","관절통, 귀통증, 신경통, 근육통",o
 접미사,hernia (탈장),cele,"rectocele, cystocele","직장탈출, 방광탈출",o
 접미사,바늘로 뚫어 액체 제거 방법,centesis,"thoracentesis, abdominocentesis","흉강천자, 복부천자술",o
