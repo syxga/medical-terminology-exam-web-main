@@ -163,13 +163,13 @@
     <details class="update-log">
         <summary>📢 업데이트 내역</summary>
         <ul>
-            <li><b>v1.11</b> - 🧠 족보+PPT 동시 선택 시 '합집합(OR)'으로 풍성하게 필터링되도록 수정</li>
+            <li><b>v1.12</b> - 🐛 약자(h/o 등) 슬래시 오작동 픽스 (복수 정답 판정 개선)</li>
+            <li><b>v1.11</b> - 🧠 족보+PPT 동시 선택 시 '합집합(OR)' 필터링으로 수정</li>
             <li><b>v1.10</b> - ✍️ '약자(Abbreviations)' 파트 주관식 모드로 변경</li>
             <li><b>v1.9</b> - 🔠 '약자(Abbreviations)' 파트 추가</li>
             <li><b>v1.8</b> - 🖥️ PPT 출제 용어 표시(뱃지) 및 필터링 기능 추가</li>
             <li><b>v1.7</b> - 📖 눈으로 훑어보는 '단어장 학습 모드' 추가</li>
             <li><b>v1.6</b> - ✍️ 주관식 '복수 정답' 인정 로직 추가</li>
-            <li><b>v1.5</b> - 🏥 '계통' 파트 추가 및 주관식 모드 적용</li>
         </ul>
     </details>
 </div>
@@ -239,7 +239,6 @@
         const isJokboOnly = document.getElementById('jokboOnly').checked;
         const isPptOnly = document.getElementById('pptOnly').checked;
 
-        // 💡 교집합(AND)에서 합집합(OR)으로 똑똑하게 수정된 부분!
         if (isJokboOnly && isPptOnly) {
             filtered = filtered.filter(item => item.isJokbo || item.isPpt);
         } else if (isJokboOnly) {
@@ -291,7 +290,6 @@
         const isJokboOnly = document.getElementById('jokboOnly').checked;
         const isPptOnly = document.getElementById('pptOnly').checked;
 
-        // 💡 교집합(AND)에서 합집합(OR)으로 똑똑하게 수정된 부분!
         if (isJokboOnly && isPptOnly) {
             filtered = filtered.filter(item => item.isJokbo || item.isPpt);
         } else if (isJokboOnly) {
@@ -414,7 +412,9 @@
 
         sIn.disabled = true; sBtn.disabled = true;
 
-        const ansList = correct.toLowerCase().split(/[,/]/).map(a => a.trim());
+        // 💡 v1.12 핵심 패치: 쉼표(,)와 '양옆 공백이 있는 슬래시( / )'만 복수정답 구분자로 처리
+        // h/o 같은 약자의 슬래시가 쪼개지는 버그 완벽 수정
+        const ansList = correct.toLowerCase().split(/,|\s+\/\s+/).map(a => a.trim());
 
         if (ansList.includes(user)) {
             if (!isReviewMode) score++; else reviewScore++;
