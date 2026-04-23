@@ -67,7 +67,7 @@
 접두사,"둘러싸는, 주위의",peri,pericaridum,"심장막, 심낭",,o
 접두사,"앞, 이전",pro,prostate,"전립샘, 전립선",,
 접두사,뒤,retro,retrocardiac,심장뒤-,,
-접두사,"밑, 아래",sub,subhepatic,간밑-,,o
+접두사,"밑, 아래",sub,"subhepatic, subcutaneous","간밑-, 피부밑/피하",,o
 접두사,"가로질러, 통해서",trans,transhepatic,"간경유-, 경간-",,
 연결형,abdomen (배),abdomin/o,abdominal,"배, 복부",,
 연결형,fat (지방),adip/o,adipose,지방,o,
@@ -214,7 +214,6 @@
 접두사,거짓,pseudo,pseudocyesis,거짓임신/가임신,o,
 접두사,"뒤, 다시",re,"relapse, remission","재발, 완화/진정",,
 접두사,"뒤, 뒤로",retro,"retroperitoneal, retroflexion","복막뒤/후복막, 뒤굽이/후굴",,
-접두사,밑,sub,subcutaneous,피부밑/피하,,
 접두사,위,supra,suprapubic,두덩위/치골상,,
 접두사,"함께, 같이","syn, sym","syndactyly, synthesis, syndrome, symbiosis, symmetry, symphysis","합지증, 합성, 증후군, 공생, 대칭, 결합 (섬유골결합)",o,
 접두사,빠른,tachy,tachypnea,빠른호흡/ 빈호흡,o,o
