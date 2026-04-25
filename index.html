@@ -15,7 +15,10 @@
         h2 { font-size: 18px; color: #546e7a; margin-top: 20px; margin-bottom: 10px; }
 
         #questionBox { background-color: #e3f2fd; border-left: 6px solid #2196F3; padding: 20px; border-radius: 12px; margin: 20px 0; font-size: 19px; font-weight: bold; line-height: 1.6; color: #1565c0; text-align: left; word-break: keep-all; position: relative; }
-        .jokbo-badge { display: inline-block; background-color: #FF5252; color: white; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 20px; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(255, 82, 82, 0.3); animation: pulse 1.5s infinite; }
+        
+        .badge-container { margin-bottom: 10px; }
+        .jokbo-badge { display: inline-block; background-color: #FF5252; color: white; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 20px; margin-right: 5px; box-shadow: 0 2px 4px rgba(255, 82, 82, 0.3); animation: pulse 1.5s infinite; }
+        .ppt-badge { display: inline-block; background-color: #3F51B5; color: white; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 20px; margin-right: 5px; box-shadow: 0 2px 4px rgba(63, 81, 181, 0.3); }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
 
         #explanationBox { display: none; background-color: #fff3e0; border: 2px dashed #ffb74d; padding: 15px; border-radius: 10px; margin-top: 15px; text-align: left; line-height: 1.6; animation: fadeIn 0.4s ease; }
@@ -40,8 +43,10 @@
         .btn-submit { background-color: #4CAF50; color: white; width: 100%; padding: 16px; font-size: 18px; font-weight: bold; border: none; border-radius: 12px; cursor: pointer; transition: 0.2s; }
         .btn-submit:disabled { background-color: #cfd8dc; cursor: not-allowed; }
 
-        /* 버튼 */
-        .btn-start { background-color: #2196F3; color: white; font-size: 18px; width: 100%; max-width: 300px; padding: 16px; margin-top: 20px; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; }
+        /* 메인 버튼들 */
+        .btn-start { background-color: #2196F3; color: white; font-size: 18px; width: 100%; max-width: 300px; padding: 16px; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; margin-bottom: 10px; }
+        .btn-learning { background-color: #4CAF50; color: white; font-size: 18px; width: 100%; max-width: 300px; padding: 16px; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; }
+        
         .btn-next { background-color: #37474f; color: white; padding: 15px; border-radius: 10px; width: 100%; margin-top: 20px; font-weight: bold; display: none; border: none; font-size: 16px; cursor: pointer; }
         
         .nav-group { display: none; width: 100%; gap: 10px; margin-top: 20px; }
@@ -58,7 +63,18 @@
         .radio-group label:has(input[type="radio"]:checked) { border-color: #2196F3; background-color: #e3f2fd; color: #1976D2; }
         .radio-group label:has(input[type="checkbox"]:checked) { border-color: #FF9800; background-color: #fff3e0; color: #ef6c00; }
         .radio-group label:has(input#jokboOnly:checked) { border-color: #FF5252; background-color: #ffebee; color: #d32f2f; }
+        .radio-group label:has(input#pptOnly:checked) { border-color: #3F51B5; background-color: #E8EAF6; color: #303F9F; }
         .radio-group label:has(input#hardMode:checked) { border-color: #9C27B0; background-color: #F3E5F5; color: #7B1FA2; }
+        /* 💡 전체 주관식 모드 전용 컬러 */
+        .radio-group label:has(input#allSubjective:checked) { border-color: #00897B; background-color: #E0F2F1; color: #00695C; }
+
+        /* 단어장(학습 모드) 카드 디자인 */
+        .learning-card { background: #fff; border: 2px solid #e0e0e0; border-radius: 12px; padding: 18px; margin-bottom: 12px; text-align: left; box-shadow: 0 4px 6px rgba(0,0,0,0.02); transition: 0.2s; }
+        .learning-card:hover { border-color: #4CAF50; box-shadow: 0 4px 12px rgba(76, 175, 80, 0.1); }
+        .lc-header { margin-bottom: 8px; font-size: 13px; color: #78909c; font-weight: bold; display: flex; align-items: center; }
+        .lc-question { font-size: 17px; font-weight: bold; color: #1565c0; margin-bottom: 12px; word-break: keep-all; line-height: 1.4; }
+        .lc-answer { font-size: 18px; font-weight: bold; color: #2e7d32; background: #e8f5e9; padding: 12px; border-radius: 8px; margin-bottom: 8px; border-left: 4px solid #4caf50;}
+        .lc-example { font-size: 14px; color: #e65100; background: #fff3e0; padding: 10px; border-radius: 8px; margin-top: 8px; }
 
         .creator { margin-top: 40px; padding-top: 20px; border-top: 1px dashed #cfd8dc; font-size: 13px; color: #b0bec5; font-weight: bold; }
         .btn-report { display: inline-block; margin-top: 8px; padding: 6px 12px; background-color: #FEE500; color: #3c1e1e; text-decoration: none; border-radius: 15px; font-size: 12px; font-weight: bold; }
@@ -73,32 +89,39 @@
 <div class="container">
     <div id="startScreen" class="screen active">
         <h1>🔤 의학용어 마스터 퀴즈</h1>
-        <p id="totalCountInfo" style="color: #607d8b; font-size: 15px; font-weight: bold;">데이터 로딩 중...</p>
+        <p id="totalCountInfo" style="color: #607d8b; font-size: 14px; font-weight: bold; line-height: 1.5;">데이터 로딩 중...</p>
         
-        <h2>[선택] 학습 모드</h2>
+        <h2>[선택] 옵션 모드</h2>
         <div class="radio-group" style="margin-bottom: 25px;">
             <label><input type="checkbox" id="jokboOnly"><span>🔥 족보 집중 풀기</span></label>
+            <label><input type="checkbox" id="pptOnly"><span>🖥️ PPT 내용 집중 풀기</span></label>
             <label><input type="checkbox" id="hardMode"><span>😈 하드 모드 (10지선다)</span></label>
+            <label><input type="checkbox" id="allSubjective"><span>✍️ 전체 주관식 모드</span></label>
         </div>
 
         <h2>[1단계] 학습 파트 선택 (중복 가능)</h2>
         <div class="radio-group" id="categoryContainer" style="margin-bottom: 25px;">
-            <label><input type="checkbox" name="partCategory" value="연결형" checked><span>연결형 (Roots)</span></label>
-            <label><input type="checkbox" name="partCategory" value="접두사" checked><span>접두사 (Prefix)</span></label>
-            <label><input type="checkbox" name="partCategory" value="접미사" checked><span>접미사 (Suffix)</span></label>
-            <label><input type="checkbox" name="partCategory" value="단수/복수" checked><span>단수/복수 (✍️ 주관식)</span></label>
-            <label><input type="checkbox" name="partCategory" value="위치" checked><span>위치/방향</span></label>
-            <label><input type="checkbox" name="partCategory" value="계통" checked><span>계통 (Systems) (✍️ 주관식)</span></label>
+            <label><input type="checkbox" name="partCategory" value="연결형"><span>연결형 (Roots)</span></label>
+            <label><input type="checkbox" name="partCategory" value="접두사"><span>접두사 (Prefix)</span></label>
+            <label><input type="checkbox" name="partCategory" value="접미사"><span>접미사 (Suffix)</span></label>
+            <label><input type="checkbox" name="partCategory" value="단수/복수"><span>단수/복수 (✍️ 주관식)</span></label>
+            <label><input type="checkbox" name="partCategory" value="위치"><span>위치/방향</span></label>
+            <label><input type="checkbox" name="partCategory" value="계통"><span>계통 (Systems) (✍️ 주관식)</span></label>
+            <label><input type="checkbox" name="partCategory" value="약자"><span>약자 (Abbreviations) (✍️ 주관식)</span></label>
         </div>
 
-        <h2>[2단계] 문항 수 선택</h2>
+        <h2>[2단계] 문항 수 선택 (퀴즈용)</h2>
         <div class="radio-group">
             <label><input type="radio" name="qCount" value="10" checked><span>10문제</span></label>
             <label><input type="radio" name="qCount" value="20"><span>20문제</span></label>
             <label><input type="radio" name="qCount" value="30"><span>30문제</span></label>
             <label><input type="radio" name="qCount" value="999"><span>모두 풀기</span></label>
         </div>
-        <button class="btn-start" onclick="startQuiz()">🚀 퀴즈 시작!</button>
+        
+        <div style="display: flex; flex-direction: column; align-items: center; margin-top: 25px;">
+            <button class="btn-start" onclick="startQuiz()">🚀 퀴즈 시작!</button>
+            <button class="btn-learning" onclick="startLearningMode()">📖 단어장 학습 모드 (문제+정답)</button>
+        </div>
     </div>
 
     <div id="quizScreen" class="screen">
@@ -122,6 +145,15 @@
         </div>
     </div>
 
+    <div id="learningScreen" class="screen">
+        <h1>📖 단어장 학습 모드</h1>
+        <p id="learningCountInfo" style="color: #607d8b; font-size: 15px; font-weight: bold; margin-bottom: 20px;"></p>
+        
+        <div id="learningListContainer" style="display: flex; flex-direction: column;"></div>
+
+        <button class="btn-start" onclick="location.reload()" style="background-color: #607d8b; margin-top: 25px;">🏠 처음으로 돌아가기</button>
+    </div>
+
     <div id="endScreen" class="screen">
         <h1>🎉 학습 완료!</h1>
         <h2 id="finalMsg" style="line-height: 1.5;"></h2>
@@ -134,12 +166,16 @@
     <details class="update-log">
         <summary>📢 업데이트 내역</summary>
         <ul>
-            <li><b>v1.6</b> - ✍️ 주관식 문제 '복수 정답' 인정 로직 추가 (쉼표/슬래시 지원)</li>
-            <li><b>v1.5</b> - 🏥 '계통' 파트 주관식으로 변경 및 명칭 정리</li>
-            <li><b>v1.4</b> - ✍️ '단수/복수' 파트 전용 주관식 모드 도입</li>
-            <li><b>v1.3</b> - 💡 해설란에 예시 단어와 의미 동시 표기 기능</li>
-            <li><b>v1.2</b> - 😈 10지선다 하드모드 추가</li>
-            <li><b>v1.1</b> - 🔥 족보 문제 강조 및 집중 풀기 기능</li>
+            <li><b>v1.15</b> - ✍️ 모든 객관식 문제를 직접 타이핑하며 외우는 <b>'전체 주관식 모드'</b> 옵션 추가 및 수정</li>
+            <li><b>v1.14</b> - ⚙️ 프로그램 시작 시 파트 선택 기본값(체크 해제)으로 변경</li>
+            <li><b>v1.13</b> - ⌨️ Enter 키만으로 '제출' 및 '다음 문제 이동'이 가능한 글로벌 단축키 적용</li>
+            <li><b>v1.12</b> - 🐛 약자(h/o 등) 슬래시 오작동 픽스</li>
+            <li><b>v1.11</b> - 🧠 족보+PPT 동시 선택 시 '합집합(OR)' 필터링으로 수정</li>
+            <li><b>v1.10</b> - ✍️ '약자' 파트 주관식 모드로 변경</li>
+            <li><b>v1.9</b> - 🔠 '약자' 파트 추가</li>
+            <li><b>v1.8</b> - 🖥️ PPT 출제 용어 표시 및 필터링 기능 추가</li>
+            <li><b>v1.7</b> - 📖 단어장 학습 모드 추가</li>
+            <li><b>v1.6</b> - ✍️ 주관식 '복수 정답' 지원 (쉼표/슬래시)</li>
         </ul>
     </details>
 </div>
@@ -163,28 +199,55 @@
             for (let i = 1; i < rows.length; i++) {
                 const row = rows[i];
                 if (row.length < 3 || !row[0].trim()) continue;
+                
                 const isJokbo = row.length >= 6 && row[5] && row[5].trim().toUpperCase() === 'O';
+                const isPpt = row.length >= 7 && row[6] && row[6].trim().toUpperCase() === 'O';
+
                 allData.push({ 
                     cat: row[0].trim(),         
                     question: row[1].trim(),    
                     answer: row[2].trim(),      
                     exampleWord: row[3] ? row[3].trim() : "",    
                     exampleMeaning: row[4] ? row[4].trim() : "", 
-                    isJokbo: isJokbo
+                    isJokbo: isJokbo,
+                    isPpt: isPpt
                 });
             }
             const jokboCount = allData.filter(d => d.isJokbo).length;
-            document.getElementById('totalCountInfo').innerText = `총 ${allData.length}개 로드 완료 (🔥 족보: ${jokboCount}개)`;
+            const pptCount = allData.filter(d => d.isPpt).length;
+            document.getElementById('totalCountInfo').innerHTML = `총 ${allData.length}개 로드 완료<br>(🔥 족보: ${jokboCount}개 / 🖥️ PPT: ${pptCount}개)`;
         }
     });
 
-    document.getElementById('subjectiveInput').addEventListener('keypress', function(e) {
+    document.addEventListener('keydown', function(e) {
         if (e.key === 'Enter') {
-            e.preventDefault();
-            const submitBtn = document.getElementById('subjectiveSubmitBtn');
-            const nextBtn = document.getElementById('nextBtnNormal');
-            if (!submitBtn.disabled) submitBtn.click();
-            else if (nextBtn.style.display === "block") nextBtn.click();
+            if (document.getElementById('quizScreen').classList.contains('active')) {
+                e.preventDefault(); 
+                
+                const nextBtnNormal = document.getElementById('nextBtnNormal');
+                const submitBtn = document.getElementById('subjectiveSubmitBtn');
+                const subContainer = document.getElementById('subjectiveContainer');
+                
+                if (subContainer.style.display === 'block' && !submitBtn.disabled) {
+                    submitBtn.click();
+                    return;
+                }
+
+                if (nextBtnNormal.style.display === 'block') {
+                    nextBtnNormal.click();
+                    return;
+                }
+
+                if (isReviewMode) {
+                    const firstOption = document.querySelector('.option-btn');
+                    const isObjDone = firstOption && firstOption.disabled;
+                    const isSubDone = subContainer.style.display === 'block' && submitBtn.disabled;
+                    
+                    if (isObjDone || isSubDone) {
+                        document.getElementById('nextBtnNav').click();
+                    }
+                }
+            }
         }
     });
 
@@ -195,6 +258,56 @@
         }
     }
 
+    function startLearningMode() {
+        const selectedCats = Array.from(document.querySelectorAll('input[name="partCategory"]:checked')).map(cb => cb.value);
+        if (selectedCats.length === 0) return alert("최소 하나 이상의 파트를 선택해 주세요!");
+
+        let filtered = allData.filter(item => selectedCats.includes(item.cat));
+
+        const isJokboOnly = document.getElementById('jokboOnly').checked;
+        const isPptOnly = document.getElementById('pptOnly').checked;
+
+        if (isJokboOnly && isPptOnly) {
+            filtered = filtered.filter(item => item.isJokbo || item.isPpt);
+        } else if (isJokboOnly) {
+            filtered = filtered.filter(item => item.isJokbo);
+        } else if (isPptOnly) {
+            filtered = filtered.filter(item => item.isPpt);
+        }
+
+        if (filtered.length === 0) {
+            return alert("선택하신 조건(파트 및 옵션)에 맞는 단어가 없습니다.");
+        }
+
+        const listContainer = document.getElementById('learningListContainer');
+        listContainer.innerHTML = ""; 
+
+        filtered.forEach(item => {
+            const jokboBadge = item.isJokbo ? `<span class="jokbo-badge" style="margin-bottom:0; margin-left:8px; animation:none; font-size:11px;">🔥 족보</span>` : '';
+            const pptBadge = item.isPpt ? `<span class="ppt-badge" style="margin-bottom:0; margin-left:5px; font-size:11px;">🖥️ PPT</span>` : '';
+            
+            let cardHtml = `
+                <div class="learning-card">
+                    <div class="lc-header">[${item.cat}] ${jokboBadge}${pptBadge}</div>
+                    <div class="lc-question">${item.question}</div>
+                    <div class="lc-answer">👉 정답: <span>${item.answer}</span></div>
+            `;
+            
+            if (item.exampleWord || item.exampleMeaning) {
+                cardHtml += `<div class="lc-example">💡 예시: <b>${item.exampleWord}</b> ${item.exampleMeaning ? `(${item.exampleMeaning})` : ''}</div>`;
+            }
+            
+            cardHtml += `</div>`;
+            listContainer.innerHTML += cardHtml;
+        });
+
+        document.getElementById('learningCountInfo').innerText = `총 ${filtered.length}개의 단어가 검색되었습니다.`;
+
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        document.getElementById('learningScreen').classList.add('active');
+        window.scrollTo(0, 0);
+    }
+
     function startQuiz() {
         const selectedCats = Array.from(document.querySelectorAll('input[name="partCategory"]:checked')).map(cb => cb.value);
         if (selectedCats.length === 0) return alert("최소 하나 이상의 파트를 선택해 주세요!");
@@ -203,19 +316,26 @@
         let filtered = allData.filter(item => selectedCats.includes(item.cat));
 
         const isJokboOnly = document.getElementById('jokboOnly').checked;
-        if (isJokboOnly) {
+        const isPptOnly = document.getElementById('pptOnly').checked;
+
+        if (isJokboOnly && isPptOnly) {
+            filtered = filtered.filter(item => item.isJokbo || item.isPpt);
+        } else if (isJokboOnly) {
             filtered = filtered.filter(item => item.isJokbo);
+        } else if (isPptOnly) {
+            filtered = filtered.filter(item => item.isPpt);
         }
 
-        const requiredCount = isHardModeActive ? 10 : 4;
+        // 💡 전체 주관식 모드 체크 여부 확인
+        const isAllSubjective = document.getElementById('allSubjective').checked;
+        const onlySubjectiveCats = selectedCats.every(cat => cat === '단수/복수' || cat === '계통' || cat === '약자');
+        
+        // 💡 주관식 모드라면 문항수 검증을 최소 1개로 완화 (객관식 보기가 필요 없으므로)
+        const requiredCount = (isAllSubjective || onlySubjectiveCats) ? 1 : (isHardModeActive ? 10 : 4);
         
         if (filtered.length < requiredCount) {
-            const onlySubjective = selectedCats.every(cat => cat === '단수/복수' || cat === '계통');
-            if (!onlySubjective) {
-                return alert(`해당 조건에 맞는 단어가 ${filtered.length}개뿐입니다. 최소 ${requiredCount}개 이상이 필요합니다.`);
-            } else if (filtered.length === 0) {
-                return alert("선택하신 조건에 맞는 데이터가 없습니다.");
-            }
+            if (filtered.length === 0) return alert("선택하신 조건에 맞는 데이터가 없습니다.");
+            return alert(`객관식 보기를 만들기 위해 최소 ${requiredCount}개 이상의 단어가 필요합니다. (현재 ${filtered.length}개)`);
         }
 
         const qCount = parseInt(document.querySelector('input[name="qCount"]:checked').value);
@@ -225,7 +345,7 @@
         totalQuestions = quizSet.length;
         currentIdx = 0; score = 0; reviewScore = 0; wrongData = []; isReviewMode = false;
         
-        document.getElementById('startScreen').classList.remove('active');
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
         document.getElementById('quizScreen').classList.add('active');
         loadQuestion();
     }
@@ -242,7 +362,7 @@
                     return;
                 }
             }
-            document.getElementById('quizScreen').classList.remove('active');
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
             document.getElementById('endScreen').classList.add('active');
             const finalMsgEl = document.getElementById('finalMsg');
             if (isReviewMode) {
@@ -254,8 +374,13 @@
         }
 
         const currentQ = quizSet[currentIdx];
-        const badgeHtml = currentQ.isJokbo ? `<div class="jokbo-badge">🔥 족보 빈출 용어</div><br>` : '';
-        document.getElementById('questionBox').innerHTML = `<span style="font-size:14px; color:#78909c; display:block; margin-bottom:5px;">[${currentQ.cat}]</span>${badgeHtml}${currentQ.question}`;
+        
+        const jokboBadge = currentQ.isJokbo ? `<span class="jokbo-badge">🔥 족보 빈출</span>` : '';
+        const pptBadge = currentQ.isPpt ? `<span class="ppt-badge">🖥️ PPT 출제</span>` : '';
+        const badges = (jokboBadge || pptBadge) ? `<div class="badge-container">${jokboBadge}${pptBadge}</div>` : '';
+        
+        document.getElementById('questionBox').innerHTML = `<span style="font-size:14px; color:#78909c; display:block; margin-bottom:5px;">[${currentQ.cat}]</span>${badges}${currentQ.question}`;
+        
         document.getElementById('resultMsg').innerText = "";
         document.getElementById('explanationBox').style.display = "none";
         document.getElementById('nextBtnNormal').style.display = "none";
@@ -275,17 +400,26 @@
 
         const optionsContainer = document.getElementById('optionsContainer');
         const subjectiveContainer = document.getElementById('subjectiveContainer');
+        const isAllSubjective = document.getElementById('allSubjective').checked;
 
-        if (currentQ.cat === '단수/복수' || currentQ.cat === '계통') {
-            optionsContainer.style.display = "none";
-            subjectiveContainer.style.display = "block";
+        // 💡 [수정됨] 컨테이너 초기화 (충돌 방지 로직)
+        optionsContainer.innerHTML = "";
+        optionsContainer.style.display = "none";
+        subjectiveContainer.style.display = "none";
+
+        if (isAllSubjective || currentQ.cat === '단수/복수' || currentQ.cat === '계통' || currentQ.cat === '약자') {
+            subjectiveContainer.style.display = "block"; // 반드시 block으로 설정
             const sIn = document.getElementById('subjectiveInput');
-            sIn.value = ""; sIn.disabled = false; sIn.style.backgroundColor = "#fff";
-            document.getElementById('subjectiveSubmitBtn').disabled = false;
-            document.getElementById('subjectiveSubmitBtn').onclick = () => checkSubAnswer(currentQ.answer, currentQ.exampleWord, currentQ.exampleMeaning);
+            const sBtn = document.getElementById('subjectiveSubmitBtn');
+            
+            sIn.value = ""; 
+            sIn.disabled = false; 
+            sIn.style.backgroundColor = "#fff";
+            sBtn.disabled = false;
+            
+            sBtn.onclick = () => checkSubAnswer(currentQ.answer, currentQ.exampleWord, currentQ.exampleMeaning);
             setTimeout(() => sIn.focus(), 100);
         } else {
-            subjectiveContainer.style.display = "none";
             optionsContainer.style.display = (isHardModeActive) ? "grid" : "flex";
             if (isHardModeActive) optionsContainer.classList.add('hard-mode-grid');
             else optionsContainer.classList.remove('hard-mode-grid');
@@ -296,7 +430,6 @@
             let choices = [currentQ.answer, ...others.slice(0, isHardModeActive ? 9 : 3).map(i => i.answer)];
             shuffle(choices);
 
-            optionsContainer.innerHTML = "";
             choices.forEach(choice => {
                 const btn = document.createElement('button');
                 btn.className = "option-btn";
@@ -307,7 +440,6 @@
         }
     }
 
-    // 💡 복수 정답을 처리하는 주관식 채점 로직
     function checkSubAnswer(correct, exWord, exMeaning) {
         const sIn = document.getElementById('subjectiveInput');
         const sBtn = document.getElementById('subjectiveSubmitBtn');
@@ -317,10 +449,8 @@
 
         sIn.disabled = true; sBtn.disabled = true;
 
-        // 💡 엑셀에 적힌 정답(correct)을 쉼표나 슬래시 기준으로 쪼개서 배열로 만듦
-        const ansList = correct.toLowerCase().split(/[,/]/).map(a => a.trim());
+        const ansList = correct.toLowerCase().split(/,|\s+\/\s+/).map(a => a.trim());
 
-        // 💡 사용자가 입력한 값이 정답 리스트(ansList) 중 하나라도 포함되어 있으면 정답 처리!
         if (ansList.includes(user)) {
             if (!isReviewMode) score++; else reviewScore++;
             sIn.style.backgroundColor = "#e8f5e9";
