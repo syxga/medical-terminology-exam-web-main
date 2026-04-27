@@ -1,324 +1,324 @@
-﻿분류,의미,용어,용어(예시),예시의미,족보여부,ppt여부
-연결형,gland (분비샘),aden/o,"adenoma (샘종, 선종) adenohypophysis (샘뇌하수체)",oma: tumor (종양) or 덩어리,o,o
-연결형,joint=articulation (관절),arthr/o,arthritis (관절염),itis: inflammation (염증),,o
-연결형,life (생명),bi/o,"biology (생물학), biopsy (생검)",opsy: 관찰하는 과정,,
-연결형,cancerous (암-),carcin/o,carcinoma (암종),,o,
-연결형,vessel,"angi/o, vas/o",,,,o
-연결형,heart (심장),cardi/o,cardiology (심장학),,o,o
-연결형,head (머리),cephal/o,cephalic (머리-),ic: 에 관한,,
-연결형,cerebrum (대뇌),cerebr/o,"cerebral (대뇌-, 뇌-)",al: 에 관한,o,o
-연결형,자르다,cis/o,"incision (절개), excision (절제)","in: 의 속으로, ex: 의 바깥으로, ion: 과정",,
-연결형,secrete (분비하다),crin/o,"endocrine gland (내분비샘), exocrine gland (외분비샘)",endo: 의 속,,
-연결형,urinary bladder (방광); 물주머니,cyst/o,cystoscopy (방광경검사),scopy: 눈으로 관찰하는 검사 ,,o
-연결형,cell (세포),cyt/o,cytology (세포학),,,
-연결형,skin (피부),"derm/o, dermat/o","dermatitis (피부염), epidermis (표피), hypodermic (피하-)","hypo: 아래, 밑",,
-연결형,electricity (전기),electr/o,electrocardiogram (심전도),gram: 기록,,
-연결형,brain (뇌),encephal/o,electroencephalogram (뇌파도),,,o
-연결형,"intestine (창자, 장)",enter/o,"enteritis (장염), dysentery (이질)",,,o
-연결형,붉은,erythr/o,erythrocyte (적혈구),cyte: 세포,o,o
-연결형,muscle,my/o,,,,o
-연결형,stomach (위),gastr/o,"gastrectomy (위절개술), gastrotomy (위절개술)","ectomy: excision (절제), tomy: 절제 (tom+y)",,o
-연결형,sugar (당),glyc/o,hyperglycemia (고혈당),"hyper: 정상보다 많은, emia: 혈액상태",,o
-연결형,woman (여성),gynec/o,gynecology (부인과학),,,
-연결형,blood (피),"hemat/o, hem/o","hematology (혈액학), hematoma (혈종)",,,o
-연결형,liver (간),hepat/o,hepatitis (간염),,o,o
-연결형,white (흰),leuk/o,leukocyte (백혈구),,,o
-연결형,"kidney (신장, 콩팥)",nephr/o,"nephritis (신장염), nephrology (신장학)",,,
-연결형,nerve (신경),neur/o,neurology (신경학),,,o
-연결형,tumor (종양),onc/o,oncology (종양학),,,
-연결형,eye (눈),ophthalm/o,"ophthalmoscope (검안경), ophthalmic artery (눈동맥)",,o,
-연결형,bone (뼈),oste/o,"osteitis (골염), osteoarthritis (고관절염)",,o,o
-연결형,disease (병),path/o,pathology (병리학),,,
-연결형,mind (정신),psych/o,"psychology (심리학), psychiatrist (정신과의사)",,,o
-연결형,"kidney (신장, 콩팥)",ren/o,renal (콩팥-),,o,o
-연결형,nose (코),rhin/o,"rhinitis (비염), rhinoplasty (코성형술)",,,
-연결형,"clot (덩어리), clotting (응고)",thromb/o,"thrombocyte (혈소판), thrombus (혈전), thrombosis (혈전증)",osis: 상태,,o
-연결형,flesh (살),sarc/o,"sarcoma (육종), sarcomere (근육원세포마디)",,,o
-연결형,"urine (소변), urinary tract (요로)",ur/o,urology (비뇨기과학),,,o
-접미사,"에 관한, 속한",ac,cardiac,심장-,,
-접미사,"에 관한, 속한",al,neural,신경-,,
-접미사,pain (통증),algia,"arthralgia, neuralgia","관절통, 신경통",o,o
-접미사,cell (세포),cyte,enthrocyte,적혈구,o,
-접미사,excision (절제),ectomy,nephrectomy,콩팥절제술,,o
-접미사,혈액의 상태,emia,leukemia,백혈병,o,
-접미사,"생산하는, 생산되는",genic,"carcinogenic, pathogenic","발암-, 병원성-",,
-접미사,protein,globin,hemoglobin,혈색소,,
-접미사,record (기록),gram,electroencephalogram,뇌파도,o,
-접미사,"에 관한, 속한","ic, ical","gastric, neurological","위-, 신경학의",,
-접미사,inflammation (염증),itis,cystitis,방광염,o,o
-접미사,tumor (종양),oma,hepatoma,간암,o,o
-접미사,관찰과정,opsy,biopsy,생검,o,
-접미사,(비정상적인) 상태,osis,"nephrosis, leukocytosis","콩팥증, 백혈구증가증",o,o
-접미사,질병상태,pathy,enteropathy,창자병증,o,
-접미사,관찰해 검사하는 장비,scope,endoscope,내시경,,
-접미사,관찰해 검사하는 과정,scopy,endoscopy,내시경검사,,o
-접미사,상태,sis,prognosis,예후,,
-접미사,"절개, 자르다","tomy, otomy",ostetomy,"뼈자름술, 절골술",o,o
-접두사,"없는, 아닌","a, an",anemia,빈혈,o,
-접두사,자신,"aut, auto",autopsy,부검,o,
-접두사,"을 통해, 완전한",dia,diagnosis,진단,o,
-접두사,속,"end, endo","endoscope, endocrinologist","내시경, 내분비전문의",o,o
-접두사,바깥,"ex, exo",excision,절제,o,
-접두사,위,epi,"epigastric, epidermis","상복부-, 명치-, 표피",,o
-접두사,"지나친, 위의",hyper,hyperthyroidism,갑상샘항진증,,
-접두사,"모자란, 아래의",hypo,hypogastric,"아랫배-, 하복부-",,o
-접두사,"속으로, 속",in,incision,절개,,
-접두사,two,"di, bi",bilateral,양측,,o
-접두사,"둘러싸는, 주위의",peri,pericaridum,"심장막, 심낭",,o
-접두사,"앞, 이전",pro,prostate,"전립샘, 전립선",,
-접두사,뒤,retro,retrocardiac,심장뒤-,,
-접두사,"밑, 아래",sub,"subhepatic, subcutaneous","간밑-, 피부밑/피하",,o
-접두사,"가로질러, 통해서",trans,transhepatic,"간경유-, 경간-",,
-연결형,abdomen (배),abdomin/o,abdominal,"배, 복부",,
-연결형,fat (지방),adip/o,adipose,지방,o,
-연결형,앞,anter/o,anterior,"앞, 전방",,
-연결형,뒤,poster/o,posterior,"뒤, 후방",,
-연결형,인체나 자궁의 목,cervic/o,cervical,"목, 경부: 자궁목",o,
-연결형,cartilage (연골),chondr/o,chondroma,연골종,o,o
-연결형,색깔,chrom/o,chromosome,염색체,o,
-연결형,"coccyx (꼬리뼈, 미골)",coccyg/o,coccygeal,"꼬리, 꼬리뼈",,
-연결형,skull (머리뼈 두개골),crani/o,craniotomy,"머리뼈절개술, 개두술",,
-연결형,cell (세포),cyt/o,cytoplasm,세포질,,
-연결형,"먼, 멀리 있는",dist/o,distal,"먼쪽, 원위",,
-연결형, 가장 가까운,proxim/o,proximal,"몸쪽, 근위",,
-연결형,인체의 등쪽 부분,dors/o,dorsal,"등쪽, 등",,
-연결형,artery,arteri/o,,,,o
-연결형,vein,"ven/o, phleb/o",,,,o
-연결형,인체의 배쪽,ventr/o,ventral,"배쪽, 복측",,
-연결형,nucleus (핵),kary/o,karyotype,핵형,,
-연결형,middle (가운데),medi/o,medial,"안쪽, 내측",,
-연결형,side (옆),later/o,lateral,"가측, 외측",,
-연결형,아랫등: 옆구리와 등 부위,lumb/o,lumbosacral,"허리엉치, 요천골",,
-연결형,nucleus (핵),nucle/o,nucleic,핵형,,
-연결형,pelvis (골반),pelv/i,pelvic,골반,,
-연결형,"sacrum (엉치뼈, 천골)",sacr/o,sacral,"엉치, 엉치뼈, 천골",,
-연결형,"ilium (엉덩뼈, 장골)",ili/o,iliac,"엉덩, 엉덩뼈, 장골",,
-연결형,"척추, 척추뼈",spin/o,spinal,"척추, 척주, 척수",,
-연결형,가슴,thorac/o,"thoracic, throacotomy","가슴, 흉, 가슴절개술, 개흉술",,
-연결형,trachea (기관),trache/o,tracheal,기관,o,
-연결형,"umbilicus (배꼽, 제)",umbilic/o,umbilical,"탯줄, 배꼽",o,
-연결형,vertebra (척추뼈),vertebr/o,vertebral,척추,,
-연결형,internal organ (내장),viscer/o,visceral,내장,o,
-연결형,사이,inter-,intervertebral,"척추사이, 추간",,o
-연결형,변화,meta-,metabolism,대사,,
-연결형,"에 관한, 에 속한",~eal,,,,
-연결형,"에 관한, 에 속한",~iac,,,,
-연결형,"에 관한, 에 속한",~ior,,,,
-연결형,"과정, 상태",~ism,,,,
-연결형,"에 관한/ 속한, 로 가득 찬",~ose,,,,
-연결형,"formation (형성, 형체, 체)",~plasm,,,,
-연결형,"(몸통, 체, 소체)",~some,,,,
-연결형,"형상, 분류",~type,,,,
-단수/복수,vertebra,vertebrae,,,o,
-단수/복수,bursa,bursae,,,,
-단수/복수,bulla,bullae,,,,
-단수/복수,anastomosis,anastomoses,,,,
-단수/복수,metastasis,metastases,,,,
-단수/복수,epiphysis,epiphyses,,,,
-단수/복수,prosthesis,prostheses,,,,
-단수/복수,pubis,pubes,,,,
-단수/복수,apex,apices,,,o,
-단수/복수,varix,varices,,,,
-단수/복수,ganglion,ganglia,,,o,
-단수/복수,spermatozoon,spermatozoa,,,,
-단수/복수,bacterium,bacteria,,,,
-단수/복수,diverticulum,diverticula,,,,
-단수/복수,ovum,ova,,,o,
-단수/복수,calculus,calculi,,,,
-단수/복수,bronchus,bronchi,,,o,
-단수/복수,nucleus,nuclei,,,,
-단수/복수,foramen,foramina,,,,
-단수/복수,iris,irides,,,,
-단수/복수,femur,femora,,,,
-단수/복수,anomaly,anomalies,,,,
-단수/복수,biopsy,biopsies,,,,
-단수/복수,adenoma,adenomata,,,,
-접미사,pain (통증),algia," arthralgia, otalgia, neuralgia, myalgia","관절통, 귀통증, 신경통, 근육통",o,
-접미사,hernia (탈장),cele,"rectocele, cystocele","직장탈출, 방광탈출",o,
-접미사,바늘로 뚫어 액체 제거 방법,centesis,"thoracentesis, abdominocentesis","흉강천자, 복부천자술",o,o
-접미사,둥근 열매모양의 bacterium,coccus,"streptococcus, staphylococcus","연쇄구균, 포도구균",,
-접미사,pain (통증),dynia,pleurodynia,가슴막통증,o,
-접미사,"생산, 형성하는 상태",genesis,"carcinogenesis, angiogenesis","발암, 혈관형성",,
-접미사,"분해, 파괴, 분리",lysis,hemolysis,용혈,o,o
-접미사,"연화, 물렁해짐",malacia,"osteomalacia, chondromalacia","골연화증, 연골화증",o,
-접미사,확대,megaly,acromegaly,말단비대증,,
-접미사,질병상태,pathy,cardiomyopathy,심장근육병증,,o
-접미사,결핍,penia,erythropenia,적혈구감소증,o,o
-접미사,"두려움, 공포",phobia,"acrophobia, agroaphobia","고소공포증, 광장공포증",o,
-접미사,"발생, 형성, 성장",plasia,achondroplasia,연골무형성증,o,
-접미사,복구수술,plasty,angioplasty,혈관성형술,o,o
-접미사,"축 늘어짐, 처짐",ptosis,"blepharoptosis, apoptosis","눈꺼풀처짐, 세포자연사",o,
-접미사,경화,sclerosis,arteriosclerosis,동맥경화증,o,
-접미사,"차단, 통제",stasis,"metastasis, hemostasis","전이, 지혈",o,o
-접미사,입 (구멍)을 만드는 수술,stomy,"colostomy, tracheostomy","결장창냄술, 기관창냄술",o,
-접미사,"발생, 육성",trophy,"hypertrophy, atrophy","비대, 위축",,
-접미사,하는 사람,er,radiographer,영상의학사,,
-접미사,"상태, 상황",ia,leukemia,백혈병,,o
-접미사,작은,ole,arteriole,세동맥,,
-접미사,작은,ule,venule,세정맥,,
-접미사,"구소, 소직","um, ium",pericardium,심장막,,
-접미사,"구조, 물질",us,"mucus, esophagus","점액, 식도",,
-접미사,"상태, 과정",y,nephropathy,콩팥병증,,
-접미사,"에 관한, 에 속한","ac, iac",cardiac,심장,,
-접미사,"에 관한, 에 속한",al,"peritoneal, inguinal, pleural","복막/배막, 샅굴/서혜/샅고랑, 가슴막/흉막",,
-접미사,"에 관한, 에 속한",ar,tonsillar,편도,,
-접미사,"에 관한, 에 속한",ary,"pulmonary, axillary","폐/허파, 겨드랑",,
-접미사,"에 관한, 에 속한",eal,laryngeal,후두,,
-접미사,"생산에 관한, 생산하는, 생기는",genic,"carcinogenesis, osteogenic","발암/암형성, 뼈형성/골형성/뼈발생",o,
-접미사,"에 관한, 에 속한","ic, ical","chronic, pathologic","만성, 병적/병리학적",,
-접미사,을 닮은,oid,"adenoids, mucoid","아데노이드, 인두편도, 점액성",,
-접미사,"에 관한, 로 가득찬",ose,adipose,지방 (으로 가득 찬),,
-접미사,에 관한,ous,mucous membrane,점막,,
-접미사,에 관한,tic,necrotic,괴사성의,,
-접두사,"아닌, 없는","a, an","apnea, anoxia","무호흡, 무산소증",,o
-접두사,에서 멀리 떨어진,ab,"abnormal, abductor","이상/비정상, 벌림근/외전근",o,
-접두사,를 향해,ad,"adductor, adrenal gland","모음근/내전근, 부신/콩팥위샘",o,
-접두사,"위로, 분리하여",ana,"anabolism, analysis","합성대사/동화, 분석",o,
-접두사,"앞, 앞으로",ante,"ante cibum, anteflexion","식전, 전굴/앞굽음",,
-접두사,자신,auto,"autoimmune disease, autonomic nervous system","자가면역질환, 자율신경계통",,
-접두사,에 대항하여,anti,"antibiotic, antibody, antigen, antagonist","항생제, 항체, 항원, 대항제/대항근",,
-접두사,둘,bi,"bifurcation, bilateral, biceps brachii muscle","갈림/분기, 양측, 위팔두갈래근",o,
-접두사,느린,brady,bradycardia,느린맥/서맥,,o
-접두사,아래로,cata,catabolism,분해대사,,
-접두사,"나쁜, 아픈, 힘든, 비정상",dys,"dyspnea, dysplasia","호흡곤란, 형성이상/이형성",o,o
-접두사,함께,con,"cogenital, anomaly, connective","선천이상,선천기형, 결합/연결",,
-접두사,"에 대항하여, 반대의",contra,"contraindication, contralateral","금기, 반대쪽/맞은편",,
-접두사,"아래로, 부족한",de,dehydration,탈수,o,
-접두사,"을 통한, 완전한",dia,"diameter, diarrhea, dialysis","지름, 설사, 투석",,
-접두사,"바깥, 바깥쪽","ec, ecto",ectopic pregnancy,딴곳임신/자궁외임신,,
-접두사,"속, 안","en, endo","endocardium, endoscope, endotracheal","심장속막, 심내막내시경, 기관내/기관경유",o,o
-접두사,"의 표면에, 위",epi,epithelium,상피,o,
-접두사,"좋은, 정상",eu,"euphoria, euthyroid","이상행복감, 정상갑상샘",o,o
-접두사,"바깥, 에서 멀리 떨어진",ex,exophthalmos,눈알돌출증/안구돌출증,o,
-접두사,절반,"hemi (semi, demi)",hemiglossectomy,반쪽혀절제,o,
-접두사,"지나친, 위의",hyper,"hyperglycemia, hyperplasia, hypertrophy","고혈당증, 과다형성/과형성, 비대",,o
-접두사,"부족한, 아래",hypo,"hypodermic injection, hypoglycemia","피하주사, 저혈당증",,
-접두사,"아닌, 없는",in,insomniac,불면증 환자,,
-접두사,"속으로, 속",in,incision,절개,,
-접두사,"밑, 아래",infra (반: supra),infracostal,갈비아래,,
-접두사,사이,inter,intercostal,"갈비사이, 늑간",,
-접두사,"속으로, 속",intra,intravenous,정맥내,,
-접두사,큰,macro,macrocephaly,대두증,,
-접두사,작은,micro,microscope,현미경,,
-접두사,나쁜,mal,"malaise, malignant","병감/권태, 악성",o,
-접두사,"너머, 변화",meta,"metacarpal bone, metastasis","손허리뼈/중수골, 전이",o,
-접두사,새로운,neo,"neonatal, neoplasm","신생아, 신생물/종양",o,
-접두사,모든,pan,pancytopenia,"범혈구감소증/온혈구, 감소증",o,o
-접두사,를 통한,per,percutaneous,"피부경유, 경피",,
-접두사,둘러싸는,peri,"pericardium, periosteum","심장막/심낭, 뼈막/골막",o,
-접두사,"비정상, 옆, 근처",para,"paralysis, parathyroid gland","마비, 부갑상샘",o,
-접두사,수나 양이 많은,poly,"polymorphonuclear, polyneuritis","다형핵, 여러신경염/다발신경염",o,o
-접두사,뒤,post,"postmortem, postpartum","사후, 분만후",,
-접두사,"이전, 앞",pre,"precancerous, prenatal","전암, 출생전",o,
-접두사,"앞, 앞으로",pro,"prodrome, prolapse","전구증, 탈출/탈출증",,
-접두사,거짓,pseudo,pseudocyesis,거짓임신/가임신,o,
-접두사,"뒤, 다시",re,"relapse, remission","재발, 완화/진정",,
-접두사,"뒤, 뒤로",retro,"retroperitoneal, retroflexion","복막뒤/후복막, 뒤굽이/후굴",,
-접두사,위,supra,suprapubic,두덩위/치골상,,
-접두사,"함께, 같이","syn, sym","syndactyly, synthesis, syndrome, symbiosis, symmetry, symphysis","합지증, 합성, 증후군, 공생, 대칭, 결합 (섬유골결합)",o,
-접두사,빠른,tachy,tachypnea,빠른호흡/ 빈호흡,o,o
-접두사,"가로질러, 을 통한",trans,"transfusion, transurethal","수혈, 요도경유/경요도",,o
-접두사,"너머, 지나친",ultra,ultrasonography,초음파촬영술,,
-접두사,하나,uni,unilatreral,한쪽/편측,,
-접두사,one,mono,monocyte,단핵구,,o
-위치,위,"superior, sup.",,,o,
-위치,머리쪽,cranial,,,o,
-위치,아래,"inferior, inf.",,,o,
-위치,꼬리쪽,caudal,,,o,
-위치,뒤,"posterior, post.",,,o,
-위치,등쪽,dorsal,,,o,
-위치,앞,"anterior, ant.",,,o,
-위치,배쪽,ventral,,,o,
-위치,안쪽,medial,,,o,
-위치,가쪽,lateral,,,o,
-위치,얕은,"superficial, supf.",,,o,
-위치,중간,intermediate,,,o,
-위치,깊은,deep,,,o,
-위치,속,"interior, internal, int.",,,o,
-위치,겉,"exterior, external, ext.",,,o,
-위치,몸쪽,proximal,,,o,
-위치,먼쪽,distal,,,o,
-위치,같은쪽,ipsilateral,,,o,
-위치,반대쪽,contralateral,,,o,
-위치,들어오는 것,afferent,,,o,
-위치,나가는 것,efferent,,,o,
-위치,꼭대기,apex,,,o,
-위치,바닥,base,,,o,
-위치,손바닥,palm,,,o,
-위치,손등,dorsum,,,o,
-위치,좌,"left, lt.",,,o,
-위치,우,"right, rt.",,,o,
-위치,시상면,sagittal plane,,,o,
-위치,이마(관상)면,coronal plane,,,o,
-위치,"굽힘, 굴곡",flexion,,,o,
-위치,"폄, 신전",extension,,,o,
-위치,"모음, 내전",adduction,,,o,
-위치,"벌림, 외전",abduction,,,o,
-위치,가로면,transverse plane,,,o,
-위치,"가로단면, 횡단면","cross-sectional plane, cross sectional plane",,,o,
-계통,Digestive system,소화계통,,,o,
-계통,Urinary system,비뇨계통,,,,
-계통,Respiratory system,호흡계통,,,,
-계통,Reproductive system,생식계통,,,,
-계통,Endocrine system,내분비계통,,,o,
-계통,Nervous system,신경계통,,,,
-계통,Circulatory system,순환계통,,,,
-계통,Musculoskeletal system,근육뼈대계통,,,,
-계통,Skin & sense organ,피부와 감각기관,,,,
-계통,소화계통,Digestive system,,,,
-계통,비뇨계통,Urinary system,,,,
-계통,호흡계통,Respiratory system,,,,
-계통,생식계통,"Reproductive system, genital",,,,
-계통,내분비계통,Endocrine system,,,,
-계통,신경계통,Nervous system,,,,
-계통,순환계통,Circulatory system,,,o,
-계통,근육뼈대계통,Musculoskeletal system,,,o,
-접미사,tissue death,infarct,,,,o
-접미사,fluid,effusion,,,,o
-접두사,fatty deposit,athero,,,,o
-접미사,recording,graphy,,,,o
-접두사,"lung, air","pneumo, pneumon, pulmo",,,,o
-접두사,airway,broncho,,,,o
-접두사,voice box,laryngo,,,,o
-접두사,windpipe,tracheo,,,,o
-접미사,chest,thorax,,,,o
-접두사,incomplete,ateles,,,,o
-접미사,expansion,ectasis,,,,o
-접두사,lining,pleura,,,,o
-접두사,breathing,spiro,,,,o
-접미사,measurement,metry,,,,o
-접미사,binding,desis,,,,o
-접미사,oxygen,oxia,,,,o
-접미사,carbon dioxide,capnia,,,,o
-연결형,결장(colon),colo,,,,o
-연결형,직장/항문(rectum/anus),procto,,,,o
-연결형,"쓸개(담낭, ballbladder)",cholecysto,,,,o
-접미사,swallowing,phagia,,,,o
-연결형,membrane,meningo,,,,o
-연결형,spinal cord/marrow,myelo,,,,o
-접두사,높다,super,,,,o
-연결형,vertebra,spondylo,,,,o
-연결형,rib,cost,,,,o
-연결형,rod,rhabdomyo,,,,o
-연결형,ureter,uretero,,,,o
-연결형,urethra,urethro,,,,o
-연결형,pelvis,pyelo,,,,o
-연결형,water,hydro,,,,o
-접미사,crushing,tripsy,,,,o
-접두사,exempt,immuno,,,,o
-접두사,lymph,lympho,,,,o
-접두사,increase in cells,cytosis,,,,o
-접두사,shield(thyroid),thyro,,,,o
-접두사,near kidney,adreno,,,,o
-접미사,urine,uria,,,,o
-약자,Past medical history,PMH,,,,o
-약자,Hypertension,HTN,,,,o
-약자,Diabetes mellitus type 2,DM2,,,,o
-약자,Coronary artery disease status post bypass graft,CAD s/p CABG,,,,o
-약자,History of,h/o,,,,o
-약자,Physical exam,PE,,,,o
-접미사,new opening,ostomy,,,,o
-접미사,fixation,pexy,,,,o
-접미사,"suture, repair",rraphy,,,,o
-접두사,ray,radio,,,,o
-접두사,slice,tomo,,,,o
+﻿분류,의미,용어,용어2,용어(예시),예시의미,족보여부,ppt여부
+연결형,gland (분비샘),aden/o,adeno,"adenoma (샘종, 선종) adenohypophysis (샘뇌하수체)",oma: tumor (종양) or 덩어리,o,o
+연결형,joint=articulation (관절),arthr/o,arthro,arthritis (관절염),itis: inflammation (염증),,o
+연결형,life (생명),bi/o,bio,"biology (생물학), biopsy (생검)",opsy: 관찰하는 과정,,
+연결형,cancerous (암-),carcin/o,carcino,carcinoma (암종),,o,
+연결형,vessel,"angi/o, vas/o","angio, vaso",,,,o
+연결형,heart (심장),cardi/o,cardio,cardiology (심장학),,o,o
+연결형,head (머리),cephal/o,cephalo,cephalic (머리-),ic: 에 관한,,
+연결형,cerebrum (대뇌),cerebr/o,cerebro,"cerebral (대뇌-, 뇌-)",al: 에 관한,o,o
+연결형,자르다,cis/o,ciso,"incision (절개), excision (절제)","in: 의 속으로, ex: 의 바깥으로, ion: 과정",,
+연결형,secrete (분비하다),crin/o,crino,"endocrine gland (내분비샘), exocrine gland (외분비샘)",endo: 의 속,,
+연결형,urinary bladder (방광); 물주머니,cyst/o,cysto,cystoscopy (방광경검사),scopy: 눈으로 관찰하는 검사 ,,o
+연결형,cell (세포),cyt/o,cyto,cytology (세포학),,,
+연결형,skin (피부),"derm/o, dermat/o","dermo, dermato","dermatitis (피부염), epidermis (표피), hypodermic (피하-)","hypo: 아래, 밑",,
+연결형,electricity (전기),electr/o,electro,electrocardiogram (심전도),gram: 기록,,
+연결형,brain (뇌),encephal/o,encephalo,electroencephalogram (뇌파도),,,o
+연결형,"intestine (창자, 장)",enter/o,entero,"enteritis (장염), dysentery (이질)",,,o
+연결형,붉은,erythr/o,erythro,erythrocyte (적혈구),cyte: 세포,o,o
+연결형,muscle,my/o,myo,,,,o
+연결형,stomach (위),gastr/o,gastro,"gastrectomy (위절개술), gastrotomy (위절개술)","ectomy: excision (절제), tomy: 절제 (tom+y)",,o
+연결형,sugar (당),glyc/o,glyco,hyperglycemia (고혈당),"hyper: 정상보다 많은, emia: 혈액상태",,o
+연결형,woman (여성),gynec/o,gyneco,gynecology (부인과학),,,
+연결형,blood (피),"hemat/o, hem/o","hemato, hemo","hematology (혈액학), hematoma (혈종)",,,o
+연결형,liver (간),hepat/o,hepato,hepatitis (간염),,o,o
+연결형,white (흰),leuk/o,leuko,leukocyte (백혈구),,,o
+연결형,"kidney (신장, 콩팥)",nephr/o,nephro,"nephritis (신장염), nephrology (신장학)",,,
+연결형,nerve (신경),neur/o,neuro,neurology (신경학),,,o
+연결형,tumor (종양),onc/o,onco,oncology (종양학),,,
+연결형,eye (눈),ophthalm/o,ophthalmo,"ophthalmoscope (검안경), ophthalmic artery (눈동맥)",,o,
+연결형,bone (뼈),oste/o,osteo,"osteitis (골염), osteoarthritis (고관절염)",,o,o
+연결형,disease (병),path/o,patho,pathology (병리학),,,
+연결형,mind (정신),psych/o,psycho,"psychology (심리학), psychiatrist (정신과의사)",,,o
+연결형,"kidney (신장, 콩팥)",ren/o,reno,renal (콩팥-),,o,o
+연결형,nose (코),rhin/o,rhino,"rhinitis (비염), rhinoplasty (코성형술)",,,
+연결형,"clot (덩어리), clotting (응고)",thromb/o,thrombo,"thrombocyte (혈소판), thrombus (혈전), thrombosis (혈전증)",osis: 상태,,o
+연결형,flesh (살),sarc/o,sarco,"sarcoma (육종), sarcomere (근육원세포마디)",,,o
+연결형,"urine (소변), urinary tract (요로)",ur/o,uro,urology (비뇨기과학),,,o
+접미사,"에 관한, 속한",ac,ac,cardiac,심장-,,
+접미사,"에 관한, 속한",al,al,neural,신경-,,
+접미사,pain (통증),algia,algia,"arthralgia, neuralgia","관절통, 신경통",o,o
+접미사,cell (세포),cyte,cyte,enthrocyte,적혈구,o,
+접미사,excision (절제),ectomy,ectomy,nephrectomy,콩팥절제술,,o
+접미사,혈액의 상태,emia,emia,leukemia,백혈병,o,
+접미사,"생산하는, 생산되는",genic,genic,"carcinogenic, pathogenic","발암-, 병원성-",,
+접미사,protein,globin,globin,hemoglobin,혈색소,,
+접미사,record (기록),gram,gram,electroencephalogram,뇌파도,o,
+접미사,"에 관한, 속한","ic, ical","ic, ical","gastric, neurological","위-, 신경학의",,
+접미사,inflammation (염증),itis,itis,cystitis,방광염,o,o
+접미사,tumor (종양),oma,oma,hepatoma,간암,o,o
+접미사,관찰과정,opsy,opsy,biopsy,생검,o,
+접미사,(비정상적인) 상태,osis,osis,"nephrosis, leukocytosis","콩팥증, 백혈구증가증",o,o
+접미사,질병상태,pathy,pathy,enteropathy,창자병증,o,
+접미사,관찰해 검사하는 장비,scope,scope,endoscope,내시경,,
+접미사,관찰해 검사하는 과정,scopy,scopy,endoscopy,내시경검사,,o
+접미사,상태,sis,sis,prognosis,예후,,
+접미사,"절개, 자르다","tomy, otomy","tomy, otomy",ostetomy,"뼈자름술, 절골술",o,o
+접두사,"없는, 아닌","a, an","a, an",anemia,빈혈,o,
+접두사,자신,"aut, auto","aut, auto",autopsy,부검,o,
+접두사,"을 통해, 완전한",dia,dia,diagnosis,진단,o,
+접두사,속,"end, endo","end, endo","endoscope, endocrinologist","내시경, 내분비전문의",o,o
+접두사,바깥,"ex, exo","ex, exo",excision,절제,o,
+접두사,위,epi,epi,"epigastric, epidermis","상복부-, 명치-, 표피",,o
+접두사,"지나친, 위의",hyper,hyper,hyperthyroidism,갑상샘항진증,,
+접두사,"모자란, 아래의",hypo,hypo,hypogastric,"아랫배-, 하복부-",,o
+접두사,"속으로, 속",in,in,incision,절개,,
+접두사,two,"di, bi","di, bi",bilateral,양측,,o
+접두사,"둘러싸는, 주위의",peri,peri,pericaridum,"심장막, 심낭",,o
+접두사,"앞, 이전",pro,pro,prostate,"전립샘, 전립선",,
+접두사,뒤,retro,retro,retrocardiac,심장뒤-,,
+접두사,"밑, 아래",sub,sub,"subhepatic, subcutaneous","간밑-, 피부밑/피하",,o
+접두사,"가로질러, 통해서",trans,trans,transhepatic,"간경유-, 경간-",,
+연결형,abdomen (배),abdomin/o,abdomino,abdominal,"배, 복부",,
+연결형,fat (지방),adip/o,adipo,adipose,지방,o,
+연결형,앞,anter/o,antero,anterior,"앞, 전방",,
+연결형,뒤,poster/o,postero,posterior,"뒤, 후방",,
+연결형,인체나 자궁의 목,cervic/o,cervico,cervical,"목, 경부: 자궁목",o,
+연결형,cartilage (연골),chondr/o,chondro,chondroma,연골종,o,o
+연결형,색깔,chrom/o,chromo,chromosome,염색체,o,
+연결형,"coccyx (꼬리뼈, 미골)",coccyg/o,coccygo,coccygeal,"꼬리, 꼬리뼈",,
+연결형,skull (머리뼈 두개골),crani/o,cranio,craniotomy,"머리뼈절개술, 개두술",,
+연결형,cell (세포),cyt/o,cyto,cytoplasm,세포질,,
+연결형,"먼, 멀리 있는",dist/o,disto,distal,"먼쪽, 원위",,
+연결형, 가장 가까운,proxim/o,proximo,proximal,"몸쪽, 근위",,
+연결형,인체의 등쪽 부분,dors/o,dorso,dorsal,"등쪽, 등",,
+연결형,artery,arteri/o,arterio,,,,o
+연결형,vein,"ven/o, phleb/o","veno, phlebo",,,,o
+연결형,인체의 배쪽,ventr/o,ventro,ventral,"배쪽, 복측",,
+연결형,nucleus (핵),kary/o,karyo,karyotype,핵형,,
+연결형,middle (가운데),medi/o,medio,medial,"안쪽, 내측",,
+연결형,side (옆),later/o,latero,lateral,"가측, 외측",,
+연결형,아랫등: 옆구리와 등 부위,lumb/o,lumbo,lumbosacral,"허리엉치, 요천골",,
+연결형,nucleus (핵),nucle/o,nucleo,nucleic,핵형,,
+연결형,pelvis (골반),pelv/i,pelvi,pelvic,골반,,
+연결형,"sacrum (엉치뼈, 천골)",sacr/o,sacro,sacral,"엉치, 엉치뼈, 천골",,
+연결형,"ilium (엉덩뼈, 장골)",ili/o,ilio,iliac,"엉덩, 엉덩뼈, 장골",,
+연결형,"척추, 척추뼈",spin/o,spino,spinal,"척추, 척주, 척수",,
+연결형,가슴,thorac/o,thoraco,"thoracic, throacotomy","가슴, 흉, 가슴절개술, 개흉술",,
+연결형,trachea (기관),trache/o,tracheo,tracheal,기관,o,
+연결형,"umbilicus (배꼽, 제)",umbilic/o,umbilico,umbilical,"탯줄, 배꼽",o,
+연결형,vertebra (척추뼈),vertebr/o,vertebro,vertebral,척추,,
+연결형,internal organ (내장),viscer/o,viscero,visceral,내장,o,
+연결형,사이,inter-,inter-,intervertebral,"척추사이, 추간",,o
+연결형,변화,meta-,meta-,metabolism,대사,,
+연결형,"에 관한, 에 속한",~eal,~eal,,,,
+연결형,"에 관한, 에 속한",~iac,~iac,,,,
+연결형,"에 관한, 에 속한",~ior,~ior,,,,
+연결형,"과정, 상태",~ism,~ism,,,,
+연결형,"에 관한/ 속한, 로 가득 찬",~ose,~ose,,,,
+연결형,"formation (형성, 형체, 체)",~plasm,~plasm,,,,
+연결형,"(몸통, 체, 소체)",~some,~some,,,,
+연결형,"형상, 분류",~type,~type,,,,
+단수/복수,vertebra,vertebrae,vertebrae,,,o,
+단수/복수,bursa,bursae,bursae,,,,
+단수/복수,bulla,bullae,bullae,,,,
+단수/복수,anastomosis,anastomoses,anastomoses,,,,
+단수/복수,metastasis,metastases,metastases,,,,
+단수/복수,epiphysis,epiphyses,epiphyses,,,,
+단수/복수,prosthesis,prostheses,prostheses,,,,
+단수/복수,pubis,pubes,pubes,,,,
+단수/복수,apex,apices,apices,,,o,
+단수/복수,varix,varices,varices,,,,
+단수/복수,ganglion,ganglia,ganglia,,,o,
+단수/복수,spermatozoon,spermatozoa,spermatozoa,,,,
+단수/복수,bacterium,bacteria,bacteria,,,,
+단수/복수,diverticulum,diverticula,diverticula,,,,
+단수/복수,ovum,ova,ova,,,o,
+단수/복수,calculus,calculi,calculi,,,,
+단수/복수,bronchus,bronchi,bronchi,,,o,
+단수/복수,nucleus,nuclei,nuclei,,,,
+단수/복수,foramen,foramina,foramina,,,,
+단수/복수,iris,irides,irides,,,,
+단수/복수,femur,femora,femora,,,,
+단수/복수,anomaly,anomalies,anomalies,,,,
+단수/복수,biopsy,biopsies,biopsies,,,,
+단수/복수,adenoma,adenomata,adenomata,,,,
+접미사,pain (통증),algia,algia," arthralgia, otalgia, neuralgia, myalgia","관절통, 귀통증, 신경통, 근육통",o,
+접미사,hernia (탈장),cele,cele,"rectocele, cystocele","직장탈출, 방광탈출",o,
+접미사,바늘로 뚫어 액체 제거 방법,centesis,centesis,"thoracentesis, abdominocentesis","흉강천자, 복부천자술",o,o
+접미사,둥근 열매모양의 bacterium,coccus,coccus,"streptococcus, staphylococcus","연쇄구균, 포도구균",,
+접미사,pain (통증),dynia,dynia,pleurodynia,가슴막통증,o,
+접미사,"생산, 형성하는 상태",genesis,genesis,"carcinogenesis, angiogenesis","발암, 혈관형성",,
+접미사,"분해, 파괴, 분리",lysis,lysis,hemolysis,용혈,o,o
+접미사,"연화, 물렁해짐",malacia,malacia,"osteomalacia, chondromalacia","골연화증, 연골화증",o,
+접미사,확대,megaly,megaly,acromegaly,말단비대증,,
+접미사,질병상태,pathy,pathy,cardiomyopathy,심장근육병증,,o
+접미사,결핍,penia,penia,erythropenia,적혈구감소증,o,o
+접미사,"두려움, 공포",phobia,phobia,"acrophobia, agroaphobia","고소공포증, 광장공포증",o,
+접미사,"발생, 형성, 성장",plasia,plasia,achondroplasia,연골무형성증,o,
+접미사,복구수술,plasty,plasty,angioplasty,혈관성형술,o,o
+접미사,"축 늘어짐, 처짐",ptosis,ptosis,"blepharoptosis, apoptosis","눈꺼풀처짐, 세포자연사",o,
+접미사,경화,sclerosis,sclerosis,arteriosclerosis,동맥경화증,o,
+접미사,"차단, 통제",stasis,stasis,"metastasis, hemostasis","전이, 지혈",o,o
+접미사,입 (구멍)을 만드는 수술,stomy,stomy,"colostomy, tracheostomy","결장창냄술, 기관창냄술",o,
+접미사,"발생, 육성",trophy,trophy,"hypertrophy, atrophy","비대, 위축",,
+접미사,하는 사람,er,er,radiographer,영상의학사,,
+접미사,"상태, 상황",ia,ia,leukemia,백혈병,,o
+접미사,작은,ole,ole,arteriole,세동맥,,
+접미사,작은,ule,ule,venule,세정맥,,
+접미사,"구소, 소직","um, ium","um, ium",pericardium,심장막,,
+접미사,"구조, 물질",us,us,"mucus, esophagus","점액, 식도",,
+접미사,"상태, 과정",y,y,nephropathy,콩팥병증,,
+접미사,"에 관한, 에 속한","ac, iac","ac, iac",cardiac,심장,,
+접미사,"에 관한, 에 속한",al,al,"peritoneal, inguinal, pleural","복막/배막, 샅굴/서혜/샅고랑, 가슴막/흉막",,
+접미사,"에 관한, 에 속한",ar,ar,tonsillar,편도,,
+접미사,"에 관한, 에 속한",ary,ary,"pulmonary, axillary","폐/허파, 겨드랑",,
+접미사,"에 관한, 에 속한",eal,eal,laryngeal,후두,,
+접미사,"생산에 관한, 생산하는, 생기는",genic,genic,"carcinogenesis, osteogenic","발암/암형성, 뼈형성/골형성/뼈발생",o,
+접미사,"에 관한, 에 속한","ic, ical","ic, ical","chronic, pathologic","만성, 병적/병리학적",,
+접미사,을 닮은,oid,oid,"adenoids, mucoid","아데노이드, 인두편도, 점액성",,
+접미사,"에 관한, 로 가득찬",ose,ose,adipose,지방 (으로 가득 찬),,
+접미사,에 관한,ous,ous,mucous membrane,점막,,
+접미사,에 관한,tic,tic,necrotic,괴사성의,,
+접두사,"아닌, 없는","a, an","a, an","apnea, anoxia","무호흡, 무산소증",,o
+접두사,에서 멀리 떨어진,ab,ab,"abnormal, abductor","이상/비정상, 벌림근/외전근",o,
+접두사,를 향해,ad,ad,"adductor, adrenal gland","모음근/내전근, 부신/콩팥위샘",o,
+접두사,"위로, 분리하여",ana,ana,"anabolism, analysis","합성대사/동화, 분석",o,
+접두사,"앞, 앞으로",ante,ante,"ante cibum, anteflexion","식전, 전굴/앞굽음",,
+접두사,자신,auto,auto,"autoimmune disease, autonomic nervous system","자가면역질환, 자율신경계통",,
+접두사,에 대항하여,anti,anti,"antibiotic, antibody, antigen, antagonist","항생제, 항체, 항원, 대항제/대항근",,
+접두사,둘,bi,bi,"bifurcation, bilateral, biceps brachii muscle","갈림/분기, 양측, 위팔두갈래근",o,
+접두사,느린,brady,brady,bradycardia,느린맥/서맥,,o
+접두사,아래로,cata,cata,catabolism,분해대사,,
+접두사,"나쁜, 아픈, 힘든, 비정상",dys,dys,"dyspnea, dysplasia","호흡곤란, 형성이상/이형성",o,o
+접두사,함께,con,con,"cogenital, anomaly, connective","선천이상,선천기형, 결합/연결",,
+접두사,"에 대항하여, 반대의",contra,contra,"contraindication, contralateral","금기, 반대쪽/맞은편",,
+접두사,"아래로, 부족한",de,de,dehydration,탈수,o,
+접두사,"을 통한, 완전한",dia,dia,"diameter, diarrhea, dialysis","지름, 설사, 투석",,
+접두사,"바깥, 바깥쪽","ec, ecto","ec, ecto",ectopic pregnancy,딴곳임신/자궁외임신,,
+접두사,"속, 안","en, endo","en, endo","endocardium, endoscope, endotracheal","심장속막, 심내막내시경, 기관내/기관경유",o,o
+접두사,"의 표면에, 위",epi,epi,epithelium,상피,o,
+접두사,"좋은, 정상",eu,eu,"euphoria, euthyroid","이상행복감, 정상갑상샘",o,o
+접두사,"바깥, 에서 멀리 떨어진",ex,ex,exophthalmos,눈알돌출증/안구돌출증,o,
+접두사,절반,"hemi (semi, demi)","hemi (semi, demi)",hemiglossectomy,반쪽혀절제,o,
+접두사,"지나친, 위의",hyper,hyper,"hyperglycemia, hyperplasia, hypertrophy","고혈당증, 과다형성/과형성, 비대",,o
+접두사,"부족한, 아래",hypo,hypo,"hypodermic injection, hypoglycemia","피하주사, 저혈당증",,
+접두사,"아닌, 없는",in,in,insomniac,불면증 환자,,
+접두사,"속으로, 속",in,in,incision,절개,,
+접두사,"밑, 아래",infra (반: supra),infra (반: supra),infracostal,갈비아래,,
+접두사,사이,inter,inter,intercostal,"갈비사이, 늑간",,
+접두사,"속으로, 속",intra,intra,intravenous,정맥내,,
+접두사,큰,macro,macro,macrocephaly,대두증,,
+접두사,작은,micro,micro,microscope,현미경,,
+접두사,나쁜,mal,mal,"malaise, malignant","병감/권태, 악성",o,
+접두사,"너머, 변화",meta,meta,"metacarpal bone, metastasis","손허리뼈/중수골, 전이",o,
+접두사,새로운,neo,neo,"neonatal, neoplasm","신생아, 신생물/종양",o,
+접두사,모든,pan,pan,pancytopenia,"범혈구감소증/온혈구, 감소증",o,o
+접두사,를 통한,per,per,percutaneous,"피부경유, 경피",,
+접두사,둘러싸는,peri,peri,"pericardium, periosteum","심장막/심낭, 뼈막/골막",o,
+접두사,"비정상, 옆, 근처",para,para,"paralysis, parathyroid gland","마비, 부갑상샘",o,
+접두사,수나 양이 많은,poly,poly,"polymorphonuclear, polyneuritis","다형핵, 여러신경염/다발신경염",o,o
+접두사,뒤,post,post,"postmortem, postpartum","사후, 분만후",,
+접두사,"이전, 앞",pre,pre,"precancerous, prenatal","전암, 출생전",o,
+접두사,"앞, 앞으로",pro,pro,"prodrome, prolapse","전구증, 탈출/탈출증",,
+접두사,거짓,pseudo,pseudo,pseudocyesis,거짓임신/가임신,o,
+접두사,"뒤, 다시",re,re,"relapse, remission","재발, 완화/진정",,
+접두사,"뒤, 뒤로",retro,retro,"retroperitoneal, retroflexion","복막뒤/후복막, 뒤굽이/후굴",,
+접두사,위,supra,supra,suprapubic,두덩위/치골상,,
+접두사,"함께, 같이","syn, sym","syn, sym","syndactyly, synthesis, syndrome, symbiosis, symmetry, symphysis","합지증, 합성, 증후군, 공생, 대칭, 결합 (섬유골결합)",o,
+접두사,빠른,tachy,tachy,tachypnea,빠른호흡/ 빈호흡,o,o
+접두사,"가로질러, 을 통한",trans,trans,"transfusion, transurethal","수혈, 요도경유/경요도",,o
+접두사,"너머, 지나친",ultra,ultra,ultrasonography,초음파촬영술,,
+접두사,하나,uni,uni,unilatreral,한쪽/편측,,
+접두사,one,mono,mono,monocyte,단핵구,,o
+위치,위,"superior, sup.","superior, sup.",,,o,
+위치,머리쪽,cranial,cranial,,,o,
+위치,아래,"inferior, inf.","inferior, inf.",,,o,
+위치,꼬리쪽,caudal,caudal,,,o,
+위치,뒤,"posterior, post.","posterior, post.",,,o,
+위치,등쪽,dorsal,dorsal,,,o,
+위치,앞,"anterior, ant.","anterior, ant.",,,o,
+위치,배쪽,ventral,ventral,,,o,
+위치,안쪽,medial,medial,,,o,
+위치,가쪽,lateral,lateral,,,o,
+위치,얕은,"superficial, supf.","superficial, supf.",,,o,
+위치,중간,intermediate,intermediate,,,o,
+위치,깊은,deep,deep,,,o,
+위치,속,"interior, internal, int.","interior, internal, int.",,,o,
+위치,겉,"exterior, external, ext.","exterior, external, ext.",,,o,
+위치,몸쪽,proximal,proximal,,,o,
+위치,먼쪽,distal,distal,,,o,
+위치,같은쪽,ipsilateral,ipsilateral,,,o,
+위치,반대쪽,contralateral,contralateral,,,o,
+위치,들어오는 것,afferent,afferent,,,o,
+위치,나가는 것,efferent,efferent,,,o,
+위치,꼭대기,apex,apex,,,o,
+위치,바닥,base,base,,,o,
+위치,손바닥,palm,palm,,,o,
+위치,손등,dorsum,dorsum,,,o,
+위치,좌,"left, lt.","left, lt.",,,o,
+위치,우,"right, rt.","right, rt.",,,o,
+위치,시상면,sagittal plane,sagittal plane,,,o,
+위치,이마(관상)면,coronal plane,coronal plane,,,o,
+위치,"굽힘, 굴곡",flexion,flexion,,,o,
+위치,"폄, 신전",extension,extension,,,o,
+위치,"모음, 내전",adduction,adduction,,,o,
+위치,"벌림, 외전",abduction,abduction,,,o,
+위치,가로면,transverse plane,transverse plane,,,o,
+위치,"가로단면, 횡단면","cross-sectional plane, cross sectional plane","cross-sectional plane, cross sectional plane",,,o,
+계통,Digestive system,소화계통,소화계통,,,o,
+계통,Urinary system,비뇨계통,비뇨계통,,,,
+계통,Respiratory system,호흡계통,호흡계통,,,,
+계통,Reproductive system,생식계통,생식계통,,,,
+계통,Endocrine system,내분비계통,내분비계통,,,o,
+계통,Nervous system,신경계통,신경계통,,,,
+계통,Circulatory system,순환계통,순환계통,,,,
+계통,Musculoskeletal system,근육뼈대계통,근육뼈대계통,,,,
+계통,Skin & sense organ,피부와 감각기관,피부와 감각기관,,,,
+계통,소화계통,Digestive system,Digestive system,,,,
+계통,비뇨계통,Urinary system,Urinary system,,,,
+계통,호흡계통,Respiratory system,Respiratory system,,,,
+계통,생식계통,"Reproductive system, genital","Reproductive system, genital",,,,
+계통,내분비계통,Endocrine system,Endocrine system,,,,
+계통,신경계통,Nervous system,Nervous system,,,,
+계통,순환계통,Circulatory system,Circulatory system,,,o,
+계통,근육뼈대계통,Musculoskeletal system,Musculoskeletal system,,,o,
+접미사,tissue death,infarct,infarct,,,,o
+접미사,fluid,effusion,effusion,,,,o
+접두사,fatty deposit,athero,athero,,,,o
+접미사,recording,graphy,graphy,,,,o
+접두사,"lung, air","pneumo, pneumon, pulmo","pneumo, pneumon, pulmo",,,,o
+접두사,airway,broncho,broncho,,,,o
+접두사,voice box,laryngo,laryngo,,,,o
+접두사,windpipe,tracheo,tracheo,,,,o
+접미사,chest,thorax,thorax,,,,o
+접두사,incomplete,ateles,ateles,,,,o
+접미사,expansion,ectasis,ectasis,,,,o
+접두사,lining,pleura,pleura,,,,o
+접두사,breathing,spiro,spiro,,,,o
+접미사,measurement,metry,metry,,,,o
+접미사,binding,desis,desis,,,,o
+접미사,oxygen,oxia,oxia,,,,o
+접미사,carbon dioxide,capnia,capnia,,,,o
+연결형,결장(colon),colo,colo,,,,o
+연결형,직장/항문(rectum/anus),procto,procto,,,,o
+연결형,"쓸개(담낭, ballbladder)",cholecysto,cholecysto,,,,o
+접미사,swallowing,phagia,phagia,,,,o
+연결형,membrane,meningo,meningo,,,,o
+연결형,spinal cord/marrow,myelo,myelo,,,,o
+접두사,높다,super,super,,,,o
+연결형,vertebra,spondylo,spondylo,,,,o
+연결형,rib,cost,cost,,,,o
+연결형,rod,rhabdomyo,rhabdomyo,,,,o
+연결형,ureter,uretero,uretero,,,,o
+연결형,urethra,urethro,urethro,,,,o
+연결형,pelvis,pyelo,pyelo,,,,o
+연결형,water,hydro,hydro,,,,o
+접미사,crushing,tripsy,tripsy,,,,o
+접두사,exempt,immuno,immuno,,,,o
+접두사,lymph,lympho,lympho,,,,o
+접두사,increase in cells,cytosis,cytosis,,,,o
+접두사,shield(thyroid),thyro,thyro,,,,o
+접두사,near kidney,adreno,adreno,,,,o
+접미사,urine,uria,uria,,,,o
+약자,Past medical history,PMH,PMH,,,,o
+약자,Hypertension,HTN,HTN,,,,o
+약자,Diabetes mellitus type 2,DM2,DM2,,,,o
+약자,Coronary artery disease status post bypass graft,CAD s/p CABG,CAD sp CABG,,,,o
+약자,History of,h/o,ho,,,,o
+약자,Physical exam,PE,PE,,,,o
+접미사,new opening,ostomy,ostomy,,,,o
+접미사,fixation,pexy,pexy,,,,o
+접미사,"suture, repair",rraphy,rraphy,,,,o
+접두사,ray,radio,radio,,,,o
+접두사,slice,tomo,tomo,,,,o
